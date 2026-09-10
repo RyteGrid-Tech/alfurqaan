@@ -203,6 +203,10 @@ export const alFurqaanHtml = `
 .success-order{font-size:14px;color:#8fa893;margin-bottom:24px;line-height:1.5}
 .toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:1200;font-family:'Jost',sans-serif;font-size:13px;padding:10px 24px;background:#0c2b22;color:#f4efe0;opacity:0;transition:opacity .3s;pointer-events:none}
 .toast.show{opacity:1}
+.af-page a.btn-primary{color:#f4efe0}
+.af-page a.btn-primary:hover{color:#07201a}
+.af-page a.btn-ghost{color:#0c2b22}
+.af-page a.btn-ghost:hover{color:#c9a35c}
 @media(max-width:768px){.head-nav{display:none}.hero{padding:80px 22px 60px;min-height:auto}.hero-title{font-size:2.4rem}.hero-meta{flex-direction:column;gap:10px;align-items:center}.grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:24px 16px}.modal{flex-direction:column;max-width:96vw}.modal-cover{flex:0 0 200px}.cart-drawer{width:100vw}.co-grid{grid-template-columns:1fr}.reading-stack{display:none}.letter-form{flex-direction:column}.contact-card{padding:28px 24px}}
 @media(max-width:480px){.hero-kicker{font-size:18px}.hero-title{font-size:2rem}.hero-sub{font-size:17px}.section-head h2{font-size:1.7rem}.grid{grid-template-columns:repeat(2,1fr);gap:20px 12px}.card-title{font-size:15px}}
 </style>
