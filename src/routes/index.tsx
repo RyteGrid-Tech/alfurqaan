@@ -1,24 +1,41 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { alFurqaanHtml } from "@/lib/alfurqaan-page";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Al Furqaan Publishers — Islamic Books & Ebooks" },
+      {
+        name: "description",
+        content:
+          "Al Furqaan Publishers Ltd — authentic Islamic literature. Buy beautiful print editions or instant ebooks.",
+      },
+      {
+        property: "og:title",
+        content: "Al Furqaan Publishers — Islamic Books & Ebooks",
+      },
+      {
+        property: "og:description",
+        content:
+          "Authentic Islamic classics and contemporary scholarship — hand-finished print editions and instant ebooks.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
+  useEffect(() => {
+    const s = document.createElement("script");
+    s.src = "/alfurqaan.js";
+    document.body.appendChild(s);
+    return () => {
+      s.remove();
+    };
+  }, []);
+
+  return <div dangerouslySetInnerHTML={{ __html: alFurqaanHtml }} />;
 }
