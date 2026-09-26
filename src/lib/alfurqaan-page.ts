@@ -218,13 +218,13 @@ export const alFurqaanHtml = `
     <a href="#" class="brand">
       <span class="brand-seal">﷽</span>
       <span class="brand-text">
-        <strong>Al Furqaan Publishers</strong>
-        <em>Ltd &middot; Est. 1987</em>
+        <strong>Dr. A. A. Shittu</strong>
+        <em>Barrister &middot; Author &amp; Scholar</em>
       </span>
     </a>
     <nav class="head-nav">
       <a href="#catalogue">The Fihrist</a>
-      <a href="#why">Our Way</a>
+      <a href="#why">The Author</a>
       <a href="#reading">Reading Room</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -266,33 +266,32 @@ export const alFurqaanHtml = `
       <span class="line gold">beautifully bound.</span>
     </h1>
     <p class="hero-sub">
-      Authentic Islamic classics and contemporary scholarship from
-      <strong>Al Furqaan Publishers Ltd</strong> &mdash; available as hand-finished print editions
-      and instant ebooks for every reader&rsquo;s journey.
+      Authentic Islamic guidance by <strong>Barrister (Dr.) Abdur-Raheem Adebayo Shittu</strong> &mdash;
+      logical insights on Faith, Shari&#8217;ah and the Afterlife for the modern believer.
     </p>
     <div class="hero-cta">
       <a href="#catalogue" class="btn btn-primary">Browse the Fihrist &darr;</a>
-      <a href="#why" class="btn btn-ghost">Why Al Furqaan?</a>
+      <a href="#why" class="btn btn-ghost">About the Author</a>
     </div>
     <div class="hero-meta">
-      <span>&#10022; Print &amp; Ebook</span>
-      <span>&#10022; Worldwide Delivery</span>
-      <span>&#10022; Scholarly Editions</span>
+      <span>&#10022; Ebooks &amp; Print</span>
+      <span>&#10022; Instant Download</span>
+      <span>&#10022; Faith &middot; Shari&#8217;ah &middot; Afterlife</span>
     </div>
   </section>
 
   <div class="ticker">
     <div class="ticker-track">
-      <span>﷽</span> Hilya of the Beloved &#65018; <span>&#10038;</span> Riy&#257;&#769; a&#777;-&#7778;&#257;li&#7717;&#299;n <span>&#10038;</span> Tafs&#299;r al-Qur&#702;an al-Kar&#299;m <span>&#10038;</span> New: The Garden of Reflections <span>&#10038;</span> Al-Furqaan Editions <span>&#10038;</span>
-      <span>﷽</span> Hilya of the Beloved &#65018; <span>&#10038;</span> Riy&#257;&#769; a&#777;-&#7778;&#257;li&#7717;&#299;n <span>&#10038;</span> Tafs&#299;r al-Qur&#702;an al-Kar&#299;m <span>&#10038;</span> New: The Garden of Reflections <span>&#10038;</span> Al-Furqaan Editions <span>&#10038;</span>
+      <span>﷽</span> A Modern Introduction to Islam <span>&#10038;</span> Muslim Prayers for Everyday Success <span>&#10038;</span> A Book of Qur&#702;&#257;nic Parables <span>&#10038;</span> New: Path to Paradise <span>&#10038;</span> Islam &amp; Christianity: Why the Conflict? <span>&#10038;</span>
+      <span>﷽</span> A Modern Introduction to Islam <span>&#10038;</span> Muslim Prayers for Everyday Success <span>&#10038;</span> A Book of Qur&#702;&#257;nic Parables <span>&#10038;</span> New: Path to Paradise <span>&#10038;</span> Islam &amp; Christianity: Why the Conflict? <span>&#10038;</span>
     </div>
   </div>
 
   <section class="catalogue" id="catalogue">
     <div class="section-head">
-      <p class="eyebrow">al-furqaan &middot; fihrist</p>
+      <p class="eyebrow">the catalogue &middot; fihrist</p>
       <h2>The Catalogue of Titles</h2>
-      <p class="section-note">Each work is available in two forms &mdash; a printed edition bound in the Emirates, and an ebook delivered to your screen within minutes.</p>
+      <p class="section-note">Every title is an instant ebook delivered to your device in minutes &mdash; and Muslim Prayers for Everyday Success is also available in a print edition.</p>
     </div>
     <div class="filterbar">
       <div class="filter-chips" id="filterChips"></div>
@@ -303,7 +302,7 @@ export const alFurqaanHtml = `
       </label>
     </div>
     <div class="grid" id="grid"></div>
-    <p class="empty" id="empty" hidden>No titles match your search &mdash; try &ldquo;heart&rdquo; or &ldquo;seerah&rdquo;.</p>
+    <p class="empty" id="empty" hidden>No titles match your search &mdash; try &ldquo;parables&rdquo; or &ldquo;prayers&rdquo;.</p>
   </section>
 
   <section class="why" id="why">
