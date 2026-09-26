@@ -307,29 +307,29 @@ export const alFurqaanHtml = `
 
   <section class="why" id="why">
     <div class="section-head light">
-      <p class="eyebrow">why al-furqaan</p>
-      <h2>Our Way</h2>
+      <p class="eyebrow">about the author</p>
+      <h2>The Author</h2>
     </div>
     <div class="why-grid">
       <div class="why-card">
         <span class="why-num">01</span>
-        <h3>Scholarly, not narrow</h3>
-        <p>Every title passes review by a board of qualified readers, so the text you hold is sound, clear and faithful to the sources.</p>
+        <h3>Scholar of law &amp; faith</h3>
+        <p>Barrister-at-Law and distinguished scholar, the author writes with the precision of the courtroom and the heart of a strict Monotheist (Muwahhid).</p>
       </div>
       <div class="why-card">
         <span class="why-num">02</span>
-        <h3>Craft in every copy</h3>
-        <p>Printed books use archival paper, foil-blocked covers and hand-sewn bindings. Ebooks are typeset afresh for small and large screens alike.</p>
+        <h3>Logic, not hearsay</h3>
+        <p>Every book answers hard questions &mdash; Shari&#8217;ah, Jihad, the Trinity, Bid&#8217;ah &mdash; with evidence from the Qur&#702;&#257;n, the authentic Sunnah and reason itself.</p>
       </div>
       <div class="why-card">
         <span class="why-num">03</span>
-        <h3>Knowledge that moves</h3>
-        <p>Print ships worldwide in protective cartons; ebooks arrive as DRM-free files you may keep, read and gift.</p>
+        <h3>Written for the modern believer</h3>
+        <p>Complex theology is made plain: clear language, real-life guidance, and a direct line from ancient revelation to contemporary life.</p>
       </div>
       <div class="why-card">
         <span class="why-num">04</span>
-        <h3>Every sale gives back</h3>
-        <p>A share of each purchase funds free Qur&#702;&#257;n distributions and student libraries in needy communities.</p>
+        <h3>Truth without compromise</h3>
+        <p>From defending the pristine Sunnah to demystifying Shari&#8217;ah, every title is a fearless call to understand &mdash; not just inherit &mdash; the faith.</p>
       </div>
     </div>
     <div class="why-foot">
@@ -346,16 +346,16 @@ export const alFurqaanHtml = `
         <h2>A place to begin</h2>
         <p class="reading-lead">Not sure where to start? These three works are where many journeys begin &mdash; each a door, clearly marked.</p>
         <ul class="reading-list">
-          <li>New to the Qur&#702;&#257;n? Begin with The Clear Criterion &mdash; a warm, verse-by-verse companion.</li>
-          <li>Building daily practice? Let Gardens of the Righteous walk you through forty hadith, carefully explained.</li>
-          <li>Loving the Prophet &#65018;? Travel the Seerah of Mercy, written for the modern heart.</li>
+          <li>New to Islam? Begin with A Modern Introduction to Islam &mdash; a clear, logical roadmap to the whole faith.</li>
+          <li>Need the right words? Muslim Prayers for Everyday Success equips you with authentic supplications for every challenge.</li>
+          <li>Curious about other faiths? Islam and Christianity: Why the Conflict? tests belief against the evidence.</li>
         </ul>
         <a href="#catalogue" class="btn btn-primary">Find your first book &darr;</a>
       </div>
       <div class="reading-stack">
-        <div class="stack-book"><span>The Clear Criterion</span><em>Qur&#702;&#257;n Companion</em></div>
-        <div class="stack-book"><span>Gardens of the Righteous</span><em>Forty Hadith</em></div>
-        <div class="stack-book"><span>Seerah of Mercy</span><em>Life of the Prophet &#65018;</em></div>
+        <div class="stack-book"><span>A Modern Introduction to Islam</span><em>Basics of Islam</em></div>
+        <div class="stack-book"><span>Muslim Prayers for Everyday Success</span><em>Du&#8217;&#257; &amp; Prayers</em></div>
+        <div class="stack-book"><span>Islam and Christianity: Why the Conflict?</span><em>Comparative Religion</em></div>
       </div>
     </div>
   </section>
@@ -380,8 +380,8 @@ export const alFurqaanHtml = `
       <div class="foot-brand">
         <span class="brand-seal">﷽</span>
         <div>
-          <strong>Al Furqaan Publishers Ltd</strong>
-          <p>Bayan Business Centre,<br/>Abu Dhabi, UAE</p>
+          <strong>Dr. Abdur-Raheem Adebayo Shittu</strong>
+          <p>Authentic Islamic Books &amp; Ebooks<br/>Nigeria</p>
         </div>
       </div>
       <div class="foot-cols">
@@ -393,21 +393,20 @@ export const alFurqaanHtml = `
           <a href="#catalogue">Gift Cards</a>
         </div>
         <div>
-          <h4>Company</h4>
-          <a href="#why">Our Way</a>
+          <h4>Explore</h4>
+          <a href="#why">About the Author</a>
           <a href="#reading">Reading Room</a>
-          <a href="#contact">Manuscript Submissions</a>
+          <a href="#contact">Newsletter</a>
           <a href="#contact">Wholesale</a>
         </div>
         <div>
           <h4>Care</h4>
           <a href="#contact">Shipping</a>
           <a href="#contact">Returns</a>
-          <a href="#contact">Accessibility</a>
-          <a href="mailto:salam@alfurqaan.pub">salam@alfurqaan.pub</a>
+          <a href="#contact">Support</a>
         </div>
       </div>
-      <p class="foot-note">&copy; <span id="year"></span> Al Furqaan Publishers Ltd. All rights reserved &middot; Knowledge is light &#1758;</p>
+      <p class="foot-note">&copy; <span id="year"></span> Dr. Abdur-Raheem Adebayo Shittu. All rights reserved &middot; Knowledge is light &#1758;</p>
     </footer>
   </section>
 </main>
