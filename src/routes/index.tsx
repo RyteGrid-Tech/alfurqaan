@@ -5,20 +5,20 @@ import { alFurqaanHtml } from "@/lib/alfurqaan-page";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Al Furqaan Publishers — Islamic Books & Ebooks" },
+      { title: "Dr. Abdur-Raheem Adebayo Shittu — Islamic Books & Ebooks" },
       {
         name: "description",
         content:
-          "Al Furqaan Publishers Ltd — authentic Islamic literature. Buy beautiful print editions or instant ebooks.",
+          "Authentic Islamic guidance by Barrister (Dr.) Abdur-Raheem Adebayo Shittu. Logical insights on Faith, Shariah & the Afterlife for the modern believer.",
       },
       {
         property: "og:title",
-        content: "Al Furqaan Publishers — Islamic Books & Ebooks",
+        content: "Dr. Abdur-Raheem Adebayo Shittu — Islamic Books & Ebooks",
       },
       {
         property: "og:description",
         content:
-          "Authentic Islamic classics and contemporary scholarship — hand-finished print editions and instant ebooks.",
+          "Authentic Islamic guidance by Barrister (Dr.) Abdur-Raheem Adebayo Shittu. Logical insights on Faith, Shariah & the Afterlife for the modern believer.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
