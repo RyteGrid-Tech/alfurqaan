@@ -1,19 +1,16 @@
 (function () {
   "use strict";
 
+  var AUTHOR = "Dr. Abdur-Raheem Adebayo Shittu";
   var B = [
-    { id: "the-clear-criterion", title: "The Clear Criterion", author: "Dr. Zayd al-Madani", category: "Quran Study", desc: "A warm, verse-by-verse companion to the Noble Qur'an, written for new readers and lifelong students alike. Each surah is introduced with historical context and key themes.", year: 2014, pages: 352, pricePrint: 22500, priceEbook: 12000, color: "#1b4d3e" },
-    { id: "gardens-of-the-righteous", title: "Gardens of the Righteous", author: "Imam al-Nawawi (ed. Dr. Hana Yusuf)", category: "Hadith", desc: "Forty carefully chosen hadith with extensive commentary on spiritual practice, character refinement and daily worship. The celebrated Riyad al-Salihin in a fresh English edition.", year: 2017, pages: 520, pricePrint: 28500, priceEbook: 15000, color: "#5c3a1e" },
-    { id: "seerah-of-mercy", title: "Seerah of Mercy", author: "Shaykh Tariq ibn Fadl", category: "Seerah", desc: "The life of the Prophet Muhammad, peace be upon him, retold for the modern heart — intimate, meticulously sourced, and beautifully paced. Includes full-colour maps and family trees.", year: 2020, pages: 780, pricePrint: 35000, priceEbook: 18000, color: "#2a1b3d" },
-    { id: "hilya-of-the-beloved", title: "Hilya of the Beloved", author: "Imam al-Tirmidhi (tr. Dr. Layla Noor)", category: "Shamail", desc: "The classic description of the Prophet's character, appearance and manner — presented in a deluxe bilingual edition with illuminated ornamentation.", year: 2019, pages: 240, pricePrint: 32000, priceEbook: 16000, color: "#8b4513" },
-    { id: "fount-of-wisdom", title: "Fount of Wisdom", author: "Ibn Ata'illah al-Iskandari (tr. Prof. Omar Saeed)", category: "Tasawwuf", desc: "The Hikam — a treasury of spiritual aphorisms that have nourished hearts for centuries. New translation with a reader's guide to daily contemplation.", year: 2016, pages: 312, pricePrint: 25000, priceEbook: 13000, color: "#1a3a4a" },
-    { id: "echoes-from-al-andalus", title: "Echoes from Al-Andalus", author: "Dr. Fatima al-Zahra Cordova", category: "History", desc: "A journey through eight centuries of Islamic civilisation in Spain — its libraries, scholars, poets and the legacy they left to Europe and the world.", year: 2022, pages: 480, pricePrint: 30000, priceEbook: 17000, color: "#6b3a2a" },
-    { id: "the-illuminated-journey", title: "The Illuminated Journey", author: "Ustadha Maryam Khalil", category: "Children", desc: "A beautifully illustrated introduction to the five pillars for young readers (7-12). Each pillar unfolds as a story, with activities and a parent guide.", year: 2023, pages: 96, pricePrint: 20000, priceEbook: 10000, color: "#2d6a4f" },
-    { id: "rhythm-of-the-year", title: "Rhythm of the Year", author: "Shaykh Hamza ibn Sulayman", category: "Fiqh", desc: "A practical guide to the Islamic calendar — Ramadan, the two Eids, Ashura and the sacred months — with rulings, sunnah practices and recipes from Muslim homes worldwide.", year: 2021, pages: 368, pricePrint: 28000, priceEbook: 15000, color: "#4a2c1a" },
-    { id: "the-house-of-wisdom", title: "The House of Wisdom", author: "Prof. Idris al-Baghdadi", category: "Philosophy", desc: "How the Bayt al-Hikma in Baghdad preserved and advanced Greek, Persian and Indian knowledge — and why that story still shapes science today.", year: 2018, pages: 420, pricePrint: 29000, priceEbook: 15500, color: "#3a2a50" },
-    { id: "threads-of-tawhid", title: "Threads of Tawhid", author: "Dr. Aisha bint Rashid", category: "Aqidah", desc: "A clear, accessible introduction to Islamic theology — God's oneness, names and attributes — woven with stories from the Quran and the salaf.", year: 2015, pages: 288, pricePrint: 24000, priceEbook: 12000, color: "#1a4a3d" },
-    { id: "mirror-of-the-soul", title: "Mirror of the Soul", author: "Al-Ghazali (abridged by Dr. Nura Farid)", category: "Tazkiyah", desc: "Selections from the Ihya Ulum al-Din on purifying the heart, arranged as a forty-day programme of daily readings and reflection exercises.", year: 2024, pages: 376, pricePrint: 34000, priceEbook: 17500, color: "#5a2a3a" },
-    { id: "recite-and-rise", title: "Recite and Rise", author: "Hafizah Amina bint Dawud", category: "Tajwid", desc: "A step-by-step guide to Qur'anic recitation — rules of tajwid, makharij, and the spiritual adab of approaching Allah's words. QR codes link to audio demonstrations.", year: 2020, pages: 200, pricePrint: 18000, priceEbook: 9500, color: "#2a5a4a" }
+    { id: "a-modern-introduction-to-islam", title: "A Modern Introduction to Islam", author: AUTHOR, category: "Basics of Islam", desc: "A clear, comprehensive and authentic guide to Islam — the Articles of Faith, the Pillars, Shari'ah, Jihad and social justice, explained with the precision of a legal expert and the heart of a believer.", year: 2026, pricePrint: 1500, priceEbook: 1500, color: "#1b4d3e" },
+    { id: "muslim-prayers-everyday-success", title: "Muslim Prayers for Everyday Success", author: AUTHOR, category: "Du'a & Prayers", print: true, desc: "A spiritual toolkit of authentic supplications from the Prophet ﷺ — for protection from witchcraft and the evil eye, prosperity, righteous sleep, matrimonial harmony and guidance through Istikhaarah.", year: 2026, pricePrint: 11999, priceEbook: 6000, color: "#2a1b3d" },
+    { id: "islam-christianity-why-conflict", title: "Islam and Christianity: Why the Conflict?", author: AUTHOR, category: "Comparative Religion", desc: "A forensic investigation into the roots of the Muslim–Christian divide. Using the Bible itself, the author traces Christian doctrine from pure Monotheism to the Church Councils — and calls for a return to the worship of One God.", year: 2026, pricePrint: 1498, priceEbook: 1498, color: "#6b3a2a" },
+    { id: "a-book-of-quranic-parables", title: "A Book of Qur'anic Parables", author: AUTHOR, category: "Qur'an Study", desc: "A guided tour through the parables of the Qur'an — the spider's fragile web, the garden struck by a whirlwind, the light within a niche — turning the abstract realities of faith into vivid, unforgettable lessons.", year: 2026, pricePrint: 2498, priceEbook: 2498, color: "#2d6a4f" },
+    { id: "critique-tijaniyyah-handbook", title: "A Critique of Dr. Adekilekun Tijani's Hand-book on the Tijaniyyah", author: AUTHOR, category: "Aqidah", desc: "A fearless, evidence-based response to the Handbook on Tijaniyyah — dissecting its claims page by page before the supreme authority of the Qur'an and the authentic Sunnah, with the precision of a legal practitioner.", year: 2026, pricePrint: 1998, priceEbook: 1998, color: "#4a2c1a" },
+    { id: "what-is-sunnah-what-is-bidah", title: "What is Sunnah? What is Bid'ah?", author: AUTHOR, category: "Sunnah & Bid'ah", desc: "A plain-language guide to distinguishing the Prophetic way from innovation — how to recognise authentic practice, honour the Sunnah and steer clear of Bid'ah in worship.", year: 2026, pricePrint: 1500, priceEbook: 1500, color: "#3a2a50" },
+    { id: "path-to-paradise", title: "Path to Paradise", author: AUTHOR, category: "Afterlife", desc: "A practical roadmap to the Hereafter — faith, repentance and righteous action laid out logically for the modern believer who longs for the Gardens of Paradise.", year: 2026, pricePrint: 1500, priceEbook: 1500, color: "#1a4a3d" },
+    { id: "islamic-ideology-democratic-socialism", title: "Islamic Ideology: Path to Democratic Socialism in Nigeria", author: AUTHOR, category: "Islamic Thought", desc: "Logical insights on faith, governance and social justice — how Islamic principles can shape equity, labour and democratic socialism in Nigeria.", year: 2026, pricePrint: 1250, priceEbook: 1250, color: "#5a2a3a" }
   ];
 
   var cart = JSON.parse(localStorage.getItem("afCart") || "[]");
@@ -45,8 +42,8 @@
       '<text x="90" y="140" text-anchor="middle" font-family="serif" font-size="14" font-weight="bold" fill="#f4efe0">' + t + "</text>" +
       '<text x="90" y="160" text-anchor="middle" font-family="serif" font-size="10" fill="#8fa893" font-style="italic">' + a + "</text>" +
       '<line x1="40" y1="195" x2="140" y2="195" stroke="#c9a35c" stroke-width="0.3"/>' +
-      '<text x="90" y="215" text-anchor="middle" font-family="serif" font-size="8" fill="#8fa893">AL FURQAAN</text>' +
-      '<text x="90" y="227" text-anchor="middle" font-family="serif" font-size="6" fill="#6c7a66">PUBLISHERS LTD</text>' +
+      '<text x="90" y="215" text-anchor="middle" font-family="serif" font-size="8" fill="#8fa893">DR. A. A. SHITTU</text>' +
+      '<text x="90" y="227" text-anchor="middle" font-family="serif" font-size="6" fill="#6c7a66">ISLAMIC BOOKS &amp; EBOOKS</text>' +
       "</svg>";
   }
 
@@ -164,7 +161,7 @@
     $("qvAuthor").textContent = qvBook.author;
     $("qvTag").textContent = qvBook.category;
     $("qvDesc").textContent = qvBook.desc;
-    $("qvMeta").innerHTML = "<span>" + qvBook.pages + " pages</span><span>First pub. " + qvBook.year + "</span><span>ISBN 978-0-00-000000-0</span>";
+    $("qvMeta").innerHTML = "<span>" + (qvBook.print ? "Print &amp; Ebook" : "Ebook &middot; instant download") + "</span><span>&copy; " + qvBook.year + "</span><span>Dr. A. A. Shittu</span>";
     $("qvCover").innerHTML = coverSVG(qvBook);
     renderQVFormat();
     updateQVPrice();
