@@ -218,8 +218,8 @@ export const alFurqaanHtml = `
     <a href="#" class="brand">
       <span class="brand-seal">﷽</span>
       <span class="brand-text">
-        <strong>Dr. A. A. Shittu</strong>
-        <em>Barrister &middot; Author &amp; Scholar</em>
+        <strong>Al Furqaan Publishers</strong>
+        <em>Islamic Books &amp; Ebooks</em>
       </span>
     </a>
     <nav class="head-nav">
@@ -380,8 +380,8 @@ export const alFurqaanHtml = `
       <div class="foot-brand">
         <span class="brand-seal">﷽</span>
         <div>
-          <strong>Dr. Abdur-Raheem Adebayo Shittu</strong>
-          <p>Authentic Islamic Books &amp; Ebooks<br/>Nigeria</p>
+          <strong>Al Furqaan Publishers</strong>
+          <p>Authentic Islamic Books &amp; Ebooks by<br/>Dr. Abdur-Raheem Adebayo Shittu &middot; Nigeria</p>
         </div>
       </div>
       <div class="foot-cols">
@@ -406,7 +406,7 @@ export const alFurqaanHtml = `
           <a href="#contact">Support</a>
         </div>
       </div>
-      <p class="foot-note">&copy; <span id="year"></span> Dr. Abdur-Raheem Adebayo Shittu. All rights reserved &middot; Knowledge is light &#1758;</p>
+      <p class="foot-note">&copy; <span id="year"></span> Al Furqaan Publishers. All rights reserved &middot; Works by Dr. Abdur-Raheem Adebayo Shittu &middot; Knowledge is light &#1758;</p>
     </footer>
   </section>
 </main>
