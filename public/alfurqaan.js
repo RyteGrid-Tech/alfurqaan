@@ -3,29 +3,68 @@
 
   var AUTHOR = "Dr. Abdur-Raheem Adebayo Shittu";
   var B = [
-    { id: "a-modern-introduction-to-islam", title: "A Modern Introduction to Islam", author: AUTHOR, category: "Basics of Islam", desc: "A clear, comprehensive and authentic guide to Islam — the Articles of Faith, the Pillars, Shari'ah, Jihad and social justice, explained with the precision of a legal expert and the heart of a believer.", year: 2026, pricePrint: 1500, priceEbook: 1500, color: "#1b4d3e" },
+    { id: "a-modern-introduction-to-islam", title: "A Modern Introduction to Islam", author: AUTHOR, category: "Basics of Islam", desc: "A clear, comprehensive and authentic guide to Islam — the Articles of Faith, the Pillars, Shari'ah, Jihad and social justice, explained with the precision of a legal expert and the heart of a believer.", year: 2026, pricePrint: 2500, priceEbook: 2500, color: "#1b4d3e" },
     { id: "muslim-prayers-everyday-success", title: "Muslim Prayers for Everyday Success", author: AUTHOR, category: "Du'a & Prayers", print: true, desc: "A spiritual toolkit of authentic supplications from the Prophet ﷺ — for protection from witchcraft and the evil eye, prosperity, righteous sleep, matrimonial harmony and guidance through Istikhaarah.", year: 2026, pricePrint: 11999, priceEbook: 6000, color: "#2a1b3d" },
-    { id: "islam-christianity-why-conflict", title: "Islam and Christianity: Why the Conflict?", author: AUTHOR, category: "Comparative Religion", desc: "A forensic investigation into the roots of the Muslim–Christian divide. Using the Bible itself, the author traces Christian doctrine from pure Monotheism to the Church Councils — and calls for a return to the worship of One God.", year: 2026, pricePrint: 1498, priceEbook: 1498, color: "#6b3a2a" },
-    { id: "a-book-of-quranic-parables", title: "A Book of Qur'anic Parables", author: AUTHOR, category: "Qur'an Study", desc: "A guided tour through the parables of the Qur'an — the spider's fragile web, the garden struck by a whirlwind, the light within a niche — turning the abstract realities of faith into vivid, unforgettable lessons.", year: 2026, pricePrint: 2498, priceEbook: 2498, color: "#2d6a4f" },
-    { id: "critique-tijaniyyah-handbook", title: "A Critique of Dr. Adekilekun Tijani's Hand-book on the Tijaniyyah", author: AUTHOR, category: "Aqidah", desc: "A fearless, evidence-based response to the Handbook on Tijaniyyah — dissecting its claims page by page before the supreme authority of the Qur'an and the authentic Sunnah, with the precision of a legal practitioner.", year: 2026, pricePrint: 1998, priceEbook: 1998, color: "#4a2c1a" },
-    { id: "what-is-sunnah-what-is-bidah", title: "What is Sunnah? What is Bid'ah?", author: AUTHOR, category: "Sunnah & Bid'ah", desc: "A plain-language guide to distinguishing the Prophetic way from innovation — how to recognise authentic practice, honour the Sunnah and steer clear of Bid'ah in worship.", year: 2026, pricePrint: 1500, priceEbook: 1500, color: "#3a2a50" },
-    { id: "path-to-paradise", title: "Path to Paradise", author: AUTHOR, category: "Afterlife", desc: "A practical roadmap to the Hereafter — faith, repentance and righteous action laid out logically for the modern believer who longs for the Gardens of Paradise.", year: 2026, pricePrint: 1500, priceEbook: 1500, color: "#1a4a3d" },
-    { id: "islamic-ideology-democratic-socialism", title: "Islamic Ideology: Path to Democratic Socialism in Nigeria", author: AUTHOR, category: "Islamic Thought", desc: "Logical insights on faith, governance and social justice — how Islamic principles can shape equity, labour and democratic socialism in Nigeria.", year: 2026, pricePrint: 1250, priceEbook: 1250, color: "#5a2a3a" }
+    { id: "islam-christianity-why-conflict", title: "Islam and Christianity: Why the Conflict?", author: AUTHOR, category: "Comparative Religion", desc: "A forensic investigation into the roots of the Muslim–Christian divide. Using the Bible itself, the author traces Christian doctrine from pure Monotheism to the Church Councils — and calls for a return to the worship of One God.", year: 2026, pricePrint: 2500, priceEbook: 2500, color: "#6b3a2a" },
+    { id: "a-book-of-quranic-parables", title: "A Book of Qur'anic Parables", author: AUTHOR, category: "Qur'an Study", desc: "A guided tour through the parables of the Qur'an — the spider's fragile web, the garden struck by a whirlwind, the light within a niche — turning the abstract realities of faith into vivid, unforgettable lessons.", year: 2026, pricePrint: 3500, priceEbook: 3500, color: "#2d6a4f" },
+    { id: "critique-tijaniyyah-handbook", title: "A Critique of Dr. Adekilekun Tijani's Hand-book on the Tijaniyyah", author: AUTHOR, category: "Aqidah", desc: "A fearless, evidence-based response to the Handbook on Tijaniyyah — dissecting its claims page by page before the supreme authority of the Qur'an and the authentic Sunnah, with the precision of a legal practitioner.", year: 2026, pricePrint: 3000, priceEbook: 3000, color: "#4a2c1a" },
+    { id: "what-is-sunnah-what-is-bidah", title: "What is Sunnah? What is Bid'ah?", author: AUTHOR, category: "Sunnah & Bid'ah", desc: "The perfection of Islam needs no additions. Written by Barrister Abdur-Raheem Adebayo Shittu, this clarity-inducing guide separates the gold of the Prophetic Tradition from the dust of cultural innovation — a hard look at common innovations in funerals, weddings and daily worship, weighing the evidence for each practice with the author's legal background. Return to the simplicity, beauty and ease of the Sunnah.", year: 2026, pricePrint: 2500, priceEbook: 2500, color: "#3a2a50" },
+    { id: "path-to-paradise", title: "Path to Paradise", author: AUTHOR, category: "Afterlife", desc: "A clear map for the only journey that is guaranteed. A vivid, spiritually grounded guide through the stages of the Afterlife — the life of Barzakh, the questioning in the grave, the Day of Reckoning, the crossing of the Sirat bridge, and the two destinations: the Bliss of Jannah and the reality of Jahannam — based entirely on the Qur'an and the authentic Sunnah. It distinguishes the Road to Paradise from the Road to Hell, urging every believer: don't meet your Creator unprepared.", year: 2026, pricePrint: 2500, priceEbook: 2500, color: "#1a4a3d" },
+    { id: "islamic-ideology-democratic-socialism", title: "Islamic Ideology: Path to Democratic Socialism in Nigeria", author: AUTHOR, category: "Islamic Thought", desc: "Capitalism has failed. Communism is dead. What is the path forward? A bold intellectual manifesto arguing that the blueprint for justice lies in the Qur'an and Sunnah: true Islam is by nature a form of democratic socialism — protecting the weak, redistributing wealth through Zakat, and holding leaders accountable to God. It dissects the failure of capitalism and the flaws of Marxism, and sets out a blueprint for a just, egalitarian Nigeria where leadership is a trust, not a means of enrichment.", year: 2026, pricePrint: 2500, priceEbook: 2500, color: "#5a2a3a" }
   ];
 
   var cart = JSON.parse(localStorage.getItem("afCart") || "[]");
   var activeCategory = "All", searchQuery = "", showBothFormats = true;
   var qvBook = null, qvFormat = "print";
+  var MODALS = ["quickModal", "checkoutModal", "successModal", "cartDrawer"];
+  var lastFocus = null;
 
   function $(id) { return document.getElementById(id); }
-  function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
   function shorten(s, n) { return s.length > n ? s.slice(0, n - 1) + "…" : s; }
   function price(b, fmt) { return fmt === "print" ? b.pricePrint : b.priceEbook; }
   function fmtPrice(n) { return "₦" + n.toLocaleString("en-NG"); }
 
+  /* ---------- dialog helpers: focus, Escape, focus trap ---------- */
+  function focusables(el) {
+    return Array.prototype.filter.call(
+      el.querySelectorAll('button, [href], input, textarea, select, [tabindex]:not([tabindex="-1"])'),
+      function (x) { return !x.disabled && x.offsetParent !== null; }
+    );
+  }
+  function openDialog(el, trigger) {
+    lastFocus = trigger || document.activeElement;
+    el.hidden = false;
+    var f = focusables(el);
+    if (f.length) f[0].focus();
+  }
+  function closeDialog(el) {
+    el.hidden = true;
+    if (lastFocus && typeof lastFocus.focus === "function") { lastFocus.focus(); }
+    lastFocus = null;
+  }
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      for (var i = 0; i < MODALS.length; i++) {
+        var m = $(MODALS[i]);
+        if (m && !m.hidden) { closeDialog(m); return; }
+      }
+    }
+    if (e.key === "Tab") {
+      var open = MODALS.map($).filter(function (m) { return m && !m.hidden; });
+      if (!open.length) return;
+      var d = open[0], f = focusables(d);
+      if (!f.length) { e.preventDefault(); return; }
+      var first = f[0], last = f[f.length - 1], cur = document.activeElement;
+      if (!d.contains(cur)) { e.preventDefault(); first.focus(); }
+      else if (e.shiftKey && cur === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && cur === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
   function coverSVG(b) {
     var c = b.color, id = b.id, t = esc(shorten(b.title, 26)), a = esc(b.author);
-    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 240">' +
+    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 240" aria-hidden="true" focusable="false">' +
       '<defs>' +
       '<linearGradient id="g_' + id + '" x1="0" y1="0" x2="1" y2="1">' +
       '<stop offset="0%" stop-color="' + c + '"/><stop offset="100%" stop-color="#000"/>' +
@@ -55,14 +94,17 @@
     if (cnt > 0) { el.hidden = false; el.textContent = cnt; } else { el.hidden = true; }
     var total = cart.reduce(function (s, i) { return s + i.price * i.qty; }, 0);
     $("checkoutBtn").disabled = cnt === 0;
+    $("checkoutBtn").textContent = cnt === 0 ? "Checkout Securely" : "Checkout Securely · " + fmtPrice(total);
     $("cartTotal").textContent = fmtPrice(total);
     $("coSum").textContent = fmtPrice(total);
+    var toggle = $("cartToggle");
+    toggle.setAttribute("aria-label", cnt === 0 ? "Open cart, empty" : "Open cart, " + cnt + " item" + (cnt > 1 ? "s" : ""));
   }
 
   function renderCart() {
     var body = $("cartBody");
     if (cart.length === 0) {
-      body.innerHTML = '<p style="color:#8fa893;font-style:italic;text-align:center;padding:40px 0">Your cart is empty.</p>';
+      body.innerHTML = '<p style="color:#4f6857;font-style:italic;text-align:center;padding:40px 0">Your cart is empty.</p>';
       updateCartUI(); return;
     }
     var h = "";
@@ -71,16 +113,16 @@
       if (!b) return;
       var lbl = item.format === "print" ? "Print edition" : "Ebook";
       h += '<div class="cart-item">' +
-        '<div class="cart-item-cover">' + coverSVG(b) + "</div>" +
+        '<div class="cart-item-cover" aria-hidden="true">' + coverSVG(b) + "</div>" +
         '<div class="cart-item-info">' +
         "<h4>" + esc(b.title) + "</h4>" +
         '<span class="fmt">' + lbl + "</span>" +
         '<div class="cart-item-qty">' +
-        '<button onclick="window._afDec(' + i + ')">−</button>' +
-        "<span>" + item.qty + "</span>" +
-        '<button onclick="window._afInc(' + i + ')">+</button>' +
+        '<button onclick="window._afDec(' + i + ')" aria-label="Decrease quantity of ' + esc(b.title) + '">−</button>' +
+        "<span aria-hidden=\"true\">" + item.qty + "</span>" +
+        '<button onclick="window._afInc(' + i + ')" aria-label="Increase quantity of ' + esc(b.title) + '">+</button>' +
         "</div>" +
-        '<button class="cart-item-remove" onclick="window._afRem(' + i + ')">Remove</button>' +
+        '<button class="cart-item-remove" onclick="window._afRem(' + i + ')" aria-label="Remove ' + esc(b.title) + ' (' + lbl + ') from cart">Remove</button>' +
         "</div>" +
         '<div class="cart-item-price">' + fmtPrice(item.price * item.qty) + "</div>" +
         "</div>";
@@ -121,17 +163,17 @@
     empty.hidden = true;
     var h = "";
     books.forEach(function (b) {
-      h += '<article class="card" data-bookid="' + b.id + '">' +
-        '<div class="card-cover">' + coverSVG(b) + '<span class="card-badge">' + b.category + "</span></div>" +
-        '<div class="card-format">' +
-        '<button data-action="add" data-fmt="print" class="active">Print</button>' +
-        '<button data-action="add" data-fmt="ebook">Ebook</button>' +
+      h += '<article class="card" data-bookid="' + b.id + '" aria-label="' + esc(b.title) + ', ' + fmtPrice(b.pricePrint) + '">' +
+        '<button type="button" class="card-cover" data-action="view" aria-label="View details of ' + esc(b.title) + '">' + coverSVG(b) + '<span class="card-badge">' + esc(b.category) + "</span></button>" +
+        '<div class="card-format" role="group" aria-label="Choose format for ' + esc(b.title) + '">' +
+        '<button type="button" data-action="add" data-fmt="print" class="active" aria-pressed="true" aria-label="Add ' + esc(b.title) + ' print edition to cart">Print</button>' +
+        '<button type="button" data-action="add" data-fmt="ebook" aria-pressed="false" aria-label="Add ' + esc(b.title) + ' ebook to cart">Ebook</button>' +
         "</div>" +
         '<h3 class="card-title">' + esc(b.title) + "</h3>" +
         '<p class="card-author">' + esc(b.author) + "</p>" +
         '<div class="card-footer">' +
         '<span class="card-price">' + fmtPrice(b.pricePrint) + "</span>" +
-        '<button data-action="add" data-fmt="print" class="card-add" title="Add to cart">+</button>' +
+        '<button type="button" data-action="add" data-fmt="print" class="card-add" aria-label="Add ' + esc(b.title) + ' print edition to cart">+</button>' +
         "</div>" +
         "</article>";
     });
@@ -143,7 +185,7 @@
     B.forEach(function (b) { if (cats.indexOf(b.category) < 0) cats.push(b.category); });
     var chips = $("filterChips");
     chips.innerHTML = cats.map(function (c) {
-      return '<button class="chip' + (c === activeCategory ? " active" : "") + '" data-cat="' + c + '">' + c + "</button>";
+      return '<button type="button" class="chip' + (c === activeCategory ? " active" : "") + '" data-cat="' + esc(c) + '"' + (c === activeCategory ? ' aria-pressed="true"' : ' aria-pressed="false"') + ">" + esc(c) + "</button>";
     }).join("");
     chips.querySelectorAll(".chip").forEach(function (btn) {
       btn.addEventListener("click", function () {
@@ -153,7 +195,7 @@
     });
   }
 
-  function openQuickView(id) {
+  function openQuickView(id, trigger) {
     qvBook = B.find(function (b) { return b.id === id; });
     if (!qvBook) return;
     qvFormat = "print";
@@ -165,21 +207,21 @@
     $("qvCover").innerHTML = coverSVG(qvBook);
     renderQVFormat();
     updateQVPrice();
-    $("quickModal").hidden = false;
+    openDialog($("quickModal"), trigger);
   }
 
   function renderQVFormat() {
     var f = $("qvFormat");
     if (!f) return;
-    f.innerHTML = '<button data-qvfmt="print" class="' + (qvFormat === "print" ? "active" : "") + '">Print ' + fmtPrice(qvBook.pricePrint) + "</button>" +
-      '<button data-qvfmt="ebook" class="' + (qvFormat === "ebook" ? "active" : "") + '">Ebook ' + fmtPrice(qvBook.priceEbook) + "</button>";
+    f.innerHTML = '<button type="button" data-qvfmt="print" class="' + (qvFormat === "print" ? "active" : "") + '" aria-pressed="' + (qvFormat === "print") + '">Print ' + fmtPrice(qvBook.pricePrint) + "</button>" +
+      '<button type="button" data-qvfmt="ebook" class="' + (qvFormat === "ebook" ? "active" : "") + '" aria-pressed="' + (qvFormat === "ebook") + '">Ebook ' + fmtPrice(qvBook.priceEbook) + "</button>";
   }
   $("qvFormat").addEventListener("click", function (e) {
     var btn = e.target.closest("[data-qvfmt]");
     if (btn) { qvFormat = btn.dataset.qvfmt; renderQVFormat(); updateQVPrice(); }
   });
   function updateQVPrice() { $("qvPrice").textContent = fmtPrice(price(qvBook, qvFormat)); }
-  $("qvAdd").addEventListener("click", function () { if (!qvBook) return; addToCart(qvBook.id, qvFormat); $("quickModal").hidden = true; });
+  $("qvAdd").addEventListener("click", function () { if (!qvBook) return; addToCart(qvBook.id, qvFormat); closeDialog($("quickModal")); });
 
   function toast(msg) {
     var t = $("toast");
@@ -188,42 +230,53 @@
     t._tid = setTimeout(function () { t.classList.remove("show"); }, 2200);
   }
 
-  $("cartToggle").addEventListener("click", function () { $("cartDrawer").hidden = !$("cartDrawer").hidden; });
-  $("cartClose").addEventListener("click", function () { $("cartDrawer").hidden = true; });
-  $("quickClose").addEventListener("click", function () { $("quickModal").hidden = true; });
-  $("quickModal").addEventListener("click", function (e) { if (e.target === this) this.hidden = true; });
+  $("cartToggle").addEventListener("click", function () {
+    var d = $("cartDrawer");
+    if (d.hidden) { openDialog(d, this); this.setAttribute("aria-expanded", "true"); }
+    else { closeDialog(d); this.setAttribute("aria-expanded", "false"); }
+  });
+  $("cartClose").addEventListener("click", function () { closeDialog($("cartDrawer")); $("cartToggle").setAttribute("aria-expanded", "false"); });
+  $("quickClose").addEventListener("click", function () { closeDialog($("quickModal")); });
+  $("quickModal").addEventListener("click", function (e) { if (e.target === this) closeDialog(this); });
   $("searchToggle").addEventListener("click", function () {
     var bar = $("searchbar"); bar.hidden = !bar.hidden;
+    this.setAttribute("aria-expanded", bar.hidden ? "false" : "true");
     if (!bar.hidden) $("searchInput").focus();
   });
   $("searchInput").addEventListener("input", function () { searchQuery = this.value; renderGrid(); });
-  $("searchClear").addEventListener("click", function () { $("searchInput").value = ""; searchQuery = ""; renderGrid(); });
+  $("searchClear").addEventListener("click", function () { $("searchInput").value = ""; searchQuery = ""; renderGrid(); $("searchInput").focus(); });
   $("formatToggle").addEventListener("change", function () { showBothFormats = this.checked; renderGrid(); });
-  $("checkoutBtn").addEventListener("click", function () { $("cartDrawer").hidden = true; $("checkoutModal").hidden = false; });
-  $("checkoutClose").addEventListener("click", function () { $("checkoutModal").hidden = true; });
-  $("checkoutModal").addEventListener("click", function (e) { if (e.target === this) this.hidden = true; });
+  $("checkoutBtn").addEventListener("click", function () {
+    closeDialog($("cartDrawer"));
+    $("cartToggle").setAttribute("aria-expanded", "false");
+    openDialog($("checkoutModal"), this);
+  });
+  $("checkoutClose").addEventListener("click", function () { closeDialog($("checkoutModal")); });
+  $("checkoutModal").addEventListener("click", function (e) { if (e.target === this) closeDialog(this); });
   $("checkoutForm").addEventListener("submit", function (e) {
     e.preventDefault();
     var total = cart.reduce(function (s, i) { return s + i.price * i.qty; }, 0);
     if (total === 0) return;
     var name = this.elements.name.value.trim(), email = this.elements.email.value.trim(), addr = this.elements.address.value.trim();
     if (!name || !email || !addr) {
-      $("coError").hidden = false; $("coError").textContent = "Please fill in all delivery fields."; return;
+      var err = $("coError");
+      err.hidden = false; err.textContent = "Please fill in all delivery fields."; err.focus && err.setAttribute("tabindex", "-1"); $("coError").focus();
+      return;
     }
     $("coError").hidden = true;
     $("checkoutModal").hidden = true;
     var items = cart.map(function (i) {
       var b = B.find(function (x) { return x.id === i.bookId; });
-      return i.qty + " x " + (b ? b.title : "Book") + " (" + i.format + ")";
+      return i.qty + " x " + (b ? esc(b.title) : "Book") + " (" + i.format + ")";
     }).join("<br>");
     $("successText").textContent = "Salam, " + name.split(" ")[0] + "! Your order has been received and a confirmation will reach " + email + " shortly.";
     $("successOrder").innerHTML = "<strong>Order summary:</strong><br>" + items + "<br><strong>Total: " + fmtPrice(total) + "</strong>";
-    $("successModal").hidden = false;
+    openDialog($("successModal"), null);
     cart = []; saveCart(); renderCart();
     this.reset();
   });
-  $("successClose").addEventListener("click", function () { $("successModal").hidden = true; });
-  $("successModal").addEventListener("click", function (e) { if (e.target === this) this.hidden = true; });
+  $("successClose").addEventListener("click", function () { closeDialog($("successModal")); });
+  $("successModal").addEventListener("click", function (e) { if (e.target === this) closeDialog(this); });
   $("letterForm").addEventListener("submit", function (e) {
     e.preventDefault();
     $("letterMsg").textContent = "✔ JazakAllah khayr! You are on the list.";
@@ -240,19 +293,16 @@
   $("year").textContent = new Date().getFullYear();
 
   $("grid").addEventListener("click", function (e) {
-    var btn = e.target.closest('[data-action="add"]');
-    var cover = e.target.closest(".card-cover");
-    if (btn) {
+    var addBtn = e.target.closest('[data-action="add"]');
+    var viewBtn = e.target.closest('[data-action="view"]');
+    if (addBtn) {
       e.preventDefault(); e.stopPropagation();
-      var card = btn.closest(".card");
-      var bookId = card.dataset.bookid;
-      var fmt = btn.dataset.fmt;
-      addToCart(bookId, fmt);
+      var card = addBtn.closest(".card");
+      addToCart(card.dataset.bookid, addBtn.dataset.fmt);
       return;
     }
-    if (cover) {
-      var card2 = cover.closest(".card");
-      openQuickView(card2.dataset.bookid);
+    if (viewBtn) {
+      openQuickView(viewBtn.closest(".card").dataset.bookid, viewBtn);
     }
   });
 
