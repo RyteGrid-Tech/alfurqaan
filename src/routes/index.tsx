@@ -7,6 +7,8 @@ import quranicParables from "@/assets/quranic-parables.jpg.asset.json";
 import modernIntroduction from "@/assets/modern-introduction-to-islam.jpg.asset.json";
 import whatIsSunnah from "@/assets/what-is-sunnah.jpg.asset.json";
 import critiqueTijaniyyah from "@/assets/critique-tijaniyyah.jpg.asset.json";
+import islamicIdeology from "@/assets/islamic-ideology.jpg.asset.json";
+import muslimPrayers from "@/assets/muslim-prayers.jpg.asset.json";
 
 const COVERS: Record<string, string> = {
   "path-to-paradise": pathToParadise.url,
@@ -15,6 +17,8 @@ const COVERS: Record<string, string> = {
   "a-modern-introduction-to-islam": modernIntroduction.url,
   "what-is-sunnah-what-is-bidah": whatIsSunnah.url,
   "critique-tijaniyyah-handbook": critiqueTijaniyyah.url,
+  "islamic-ideology-democratic-socialism": islamicIdeology.url,
+  "muslim-prayers-everyday-success": muslimPrayers.url,
 };
 
 export const Route = createFileRoute("/")({
