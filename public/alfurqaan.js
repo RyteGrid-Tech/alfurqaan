@@ -2,14 +2,15 @@
   "use strict";
 
   var AUTHOR = "Dr. Abdur-Raheem Adebayo Shittu";
+  var COVERS = (typeof window !== "undefined" && window.AF_COVERS) || {};
   var B = [
-    { id: "a-modern-introduction-to-islam", title: "A Modern Introduction to Islam", author: AUTHOR, category: "Basics of Islam", desc: "A clear, comprehensive and authentic guide to Islam — the Articles of Faith, the Pillars, Shari'ah, Jihad and social justice, explained with the precision of a legal expert and the heart of a believer.", year: 2026, pricePrint: 2500, priceEbook: 2500, color: "#1b4d3e" },
+    { id: "a-modern-introduction-to-islam", title: "A Modern Introduction to Islam", author: AUTHOR, category: "Basics of Islam", desc: "A clear, comprehensive and authentic guide to Islam — the Articles of Faith, the Pillars, Shari'ah, Jihad and social justice, explained with the precision of a legal expert and the heart of a believer.", year: 2026, pricePrint: 2500, priceEbook: 2500, cover: COVERS["a-modern-introduction-to-islam"], color: "#1b4d3e" },
     { id: "muslim-prayers-everyday-success", title: "Muslim Prayers for Everyday Success", author: AUTHOR, category: "Du'a & Prayers", print: true, desc: "A spiritual toolkit of authentic supplications from the Prophet ﷺ — for protection from witchcraft and the evil eye, prosperity, righteous sleep, matrimonial harmony and guidance through Istikhaarah.", year: 2026, pricePrint: 11999, priceEbook: 6000, color: "#2a1b3d" },
-    { id: "islam-christianity-why-conflict", title: "Islam and Christianity: Why the Conflict?", author: AUTHOR, category: "Comparative Religion", desc: "A forensic investigation into the roots of the Muslim–Christian divide. Using the Bible itself, the author traces Christian doctrine from pure Monotheism to the Church Councils — and calls for a return to the worship of One God.", year: 2026, pricePrint: 2500, priceEbook: 2500, color: "#6b3a2a" },
-    { id: "a-book-of-quranic-parables", title: "A Book of Qur'anic Parables", author: AUTHOR, category: "Qur'an Study", desc: "A guided tour through the parables of the Qur'an — the spider's fragile web, the garden struck by a whirlwind, the light within a niche — turning the abstract realities of faith into vivid, unforgettable lessons.", year: 2026, pricePrint: 3500, priceEbook: 3500, color: "#2d6a4f" },
-    { id: "critique-tijaniyyah-handbook", title: "A Critique of Dr. Adekilekun Tijani's Hand-book on the Tijaniyyah", author: AUTHOR, category: "Aqidah", desc: "A fearless, evidence-based response to the Handbook on Tijaniyyah — dissecting its claims page by page before the supreme authority of the Qur'an and the authentic Sunnah, with the precision of a legal practitioner.", year: 2026, pricePrint: 3000, priceEbook: 3000, color: "#4a2c1a" },
-    { id: "what-is-sunnah-what-is-bidah", title: "What is Sunnah? What is Bid'ah?", author: AUTHOR, category: "Sunnah & Bid'ah", desc: "The perfection of Islam needs no additions. Written by Barrister Abdur-Raheem Adebayo Shittu, this clarity-inducing guide separates the gold of the Prophetic Tradition from the dust of cultural innovation — a hard look at common innovations in funerals, weddings and daily worship, weighing the evidence for each practice with the author's legal background. Return to the simplicity, beauty and ease of the Sunnah.", year: 2026, pricePrint: 2500, priceEbook: 2500, color: "#3a2a50" },
-    { id: "path-to-paradise", title: "Path to Paradise", author: AUTHOR, category: "Afterlife", desc: "A clear map for the only journey that is guaranteed. A vivid, spiritually grounded guide through the stages of the Afterlife — the life of Barzakh, the questioning in the grave, the Day of Reckoning, the crossing of the Sirat bridge, and the two destinations: the Bliss of Jannah and the reality of Jahannam — based entirely on the Qur'an and the authentic Sunnah. It distinguishes the Road to Paradise from the Road to Hell, urging every believer: don't meet your Creator unprepared.", year: 2026, pricePrint: 2500, priceEbook: 2500, color: "#1a4a3d" },
+    { id: "islam-christianity-why-conflict", title: "Islam and Christianity: Why the Conflict?", author: AUTHOR, category: "Comparative Religion", desc: "A forensic investigation into the roots of the Muslim–Christian divide. Using the Bible itself, the author traces Christian doctrine from pure Monotheism to the Church Councils — and calls for a return to the worship of One God.", year: 2026, pricePrint: 2500, priceEbook: 2500, cover: COVERS["islam-christianity-why-conflict"], color: "#6b3a2a" },
+    { id: "a-book-of-quranic-parables", title: "A Book of Qur'anic Parables", author: AUTHOR, category: "Qur'an Study", desc: "A guided tour through the parables of the Qur'an — the spider's fragile web, the garden struck by a whirlwind, the light within a niche — turning the abstract realities of faith into vivid, unforgettable lessons.", year: 2026, pricePrint: 3500, priceEbook: 3500, cover: COVERS["a-book-of-quranic-parables"], color: "#2d6a4f" },
+    { id: "critique-tijaniyyah-handbook", title: "A Critique of Dr. Adekilekun Tijani's Hand-book on the Tijaniyyah", author: AUTHOR, category: "Aqidah", desc: "A fearless, evidence-based response to the Handbook on Tijaniyyah — dissecting its claims page by page before the supreme authority of the Qur'an and the authentic Sunnah, with the precision of a legal practitioner.", year: 2026, pricePrint: 3000, priceEbook: 3000, cover: COVERS["critique-tijaniyyah-handbook"], color: "#4a2c1a" },
+    { id: "what-is-sunnah-what-is-bidah", title: "What is Sunnah? What is Bid'ah?", author: AUTHOR, category: "Sunnah & Bid'ah", desc: "The perfection of Islam needs no additions. Written by Barrister Abdur-Raheem Adebayo Shittu, this clarity-inducing guide separates the gold of the Prophetic Tradition from the dust of cultural innovation — a hard look at common innovations in funerals, weddings and daily worship, weighing the evidence for each practice with the author's legal background. Return to the simplicity, beauty and ease of the Sunnah.", year: 2026, pricePrint: 2500, priceEbook: 2500, cover: COVERS["what-is-sunnah-what-is-bidah"], color: "#3a2a50" },
+    { id: "path-to-paradise", title: "Path to Paradise", author: AUTHOR, category: "Afterlife", desc: "A clear map for the only journey that is guaranteed. A vivid, spiritually grounded guide through the stages of the Afterlife — the life of Barzakh, the questioning in the grave, the Day of Reckoning, the crossing of the Sirat bridge, and the two destinations: the Bliss of Jannah and the reality of Jahannam — based entirely on the Qur'an and the authentic Sunnah. It distinguishes the Road to Paradise from the Road to Hell, urging every believer: don't meet your Creator unprepared.", year: 2026, pricePrint: 2500, priceEbook: 2500, cover: COVERS["path-to-paradise"], color: "#1a4a3d" },
     { id: "islamic-ideology-democratic-socialism", title: "Islamic Ideology: Path to Democratic Socialism in Nigeria", author: AUTHOR, category: "Islamic Thought", desc: "Capitalism has failed. Communism is dead. What is the path forward? A bold intellectual manifesto arguing that the blueprint for justice lies in the Qur'an and Sunnah: true Islam is by nature a form of democratic socialism — protecting the weak, redistributing wealth through Zakat, and holding leaders accountable to God. It dissects the failure of capitalism and the flaws of Marxism, and sets out a blueprint for a just, egalitarian Nigeria where leadership is a trust, not a means of enrichment.", year: 2026, pricePrint: 2500, priceEbook: 2500, color: "#5a2a3a" }
   ];
 
@@ -86,6 +87,11 @@
       "</svg>";
   }
 
+  function coverHTML(b, alt) {
+    if (b.cover) return '<img src="' + b.cover + '" alt="' + (alt || "") + '" loading="lazy" />';
+    return coverSVG(b);
+  }
+
   function saveCart() { localStorage.setItem("afCart", JSON.stringify(cart)); updateCartUI(); }
 
   function updateCartUI() {
@@ -113,7 +119,7 @@
       if (!b) return;
       var lbl = item.format === "print" ? "Print edition" : "Ebook";
       h += '<div class="cart-item">' +
-        '<div class="cart-item-cover" aria-hidden="true">' + coverSVG(b) + "</div>" +
+        '<div class="cart-item-cover" aria-hidden="true">' + coverHTML(b, "") + "</div>" +
         '<div class="cart-item-info">' +
         "<h4>" + esc(b.title) + "</h4>" +
         '<span class="fmt">' + lbl + "</span>" +
@@ -164,7 +170,7 @@
     var h = "";
     books.forEach(function (b) {
       h += '<article class="card" data-bookid="' + b.id + '" aria-label="' + esc(b.title) + ', ' + fmtPrice(b.pricePrint) + '">' +
-        '<button type="button" class="card-cover" data-action="view" aria-label="View details of ' + esc(b.title) + '">' + coverSVG(b) + '<span class="card-badge">' + esc(b.category) + "</span></button>" +
+        '<button type="button" class="card-cover" data-action="view" aria-label="View details of ' + esc(b.title) + '">' + coverHTML(b, "") + '<span class="card-badge">' + esc(b.category) + "</span></button>" +
         '<div class="card-format" role="group" aria-label="Choose format for ' + esc(b.title) + '">' +
         '<button type="button" data-action="add" data-fmt="print" class="active" aria-pressed="true" aria-label="Add ' + esc(b.title) + ' print edition to cart">Print</button>' +
         '<button type="button" data-action="add" data-fmt="ebook" aria-pressed="false" aria-label="Add ' + esc(b.title) + ' ebook to cart">Ebook</button>' +
@@ -204,7 +210,7 @@
     $("qvTag").textContent = qvBook.category;
     $("qvDesc").textContent = qvBook.desc;
     $("qvMeta").innerHTML = "<span>" + (qvBook.print ? "Print &amp; Ebook" : "Ebook &middot; instant download") + "</span><span>&copy; " + qvBook.year + "</span><span>Dr. A. A. Shittu</span>";
-    $("qvCover").innerHTML = coverSVG(qvBook);
+    $("qvCover").innerHTML = coverHTML(qvBook, qvBook.title + " \u2014 book cover");
     renderQVFormat();
     updateQVPrice();
     openDialog($("quickModal"), trigger);
