@@ -213,8 +213,14 @@ export const alFurqaanHtml = `
 .af-page :focus-visible{outline:2px solid #c9a35c;outline-offset:2px;box-shadow:0 0 0 4px rgba(7,32,26,.55)}
 .af-page .skip-link{position:absolute;left:16px;top:-60px;z-index:1300;background:#0c2b22;color:#f4efe0;font-family:'Jost',sans-serif;font-size:13px;padding:10px 18px;transition:top .2s}
 .af-page .skip-link:focus{top:12px}
+.af-page .menu-toggle{display:none}
+.af-page .format-toggle{position:relative}
+.af-page .format-toggle input{position:absolute;width:1px;height:1px;opacity:0}
+.af-page .format-toggle input:focus-visible+.toggle-track{outline:2px solid #c9a35c;outline-offset:2px;box-shadow:0 0 0 4px rgba(7,32,26,.55)}
+.af-page .letter-form input:focus-visible,.af-page .checkout input:focus-visible,.af-page .checkout textarea:focus-visible{outline:2px solid #c9a35c;outline-offset:2px}
+.af-page .card-cover img,.af-page .modal-cover img,.af-page .cart-item-cover img{object-fit:cover}
 @media(prefers-reduced-motion:reduce){.af-page *,.af-page *::before,.af-page *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
-@media(max-width:768px){.icon-btn{width:44px;height:44px}.card-add{width:40px;height:40px;font-size:20px}.chip{padding:9px 16px}.cart-item-qty button{width:34px;height:34px;font-size:16px}.modal-x{width:44px;height:44px}.search-clear{padding:8px 10px}.cart-item-remove{padding:8px 0;font-size:15px}.card-format button{padding:7px 12px;font-size:11px}}
+@media(max-width:768px){.icon-btn{width:44px;height:44px}.af-page .menu-toggle{display:grid}.head-inner{position:relative}.head-nav{display:none}.head-nav.is-open{display:flex;position:absolute;top:100%;left:0;right:0;z-index:901;flex-direction:column;align-items:stretch;gap:0;padding:8px 16px 14px;background:#f4efe0;border-bottom:1px solid rgba(12,43,34,.15);box-shadow:0 8px 18px rgba(7,32,26,.12)}.head-nav.is-open a{display:flex;align-items:center;min-height:48px;padding:8px 4px;border-bottom:1px solid rgba(12,43,34,.08)}.head-nav.is-open a:last-child{border-bottom:0}.card-add{width:40px;height:40px;font-size:20px}.chip{padding:9px 16px}.cart-item-qty button{width:34px;height:34px;font-size:16px}.modal-x{width:44px;height:44px}.search-clear{padding:8px 10px}.cart-item-remove{padding:8px 0;font-size:15px}.card-format button{padding:7px 12px;font-size:11px}}
 </style>
 <div class="af-page">
 <a href="#catalogue" class="skip-link">Skip to the catalogue</a>
@@ -229,13 +235,16 @@ export const alFurqaanHtml = `
         <em>Islamic Books &amp; Ebooks</em>
       </span>
     </a>
-    <nav class="head-nav" aria-label="Main">
+    <nav class="head-nav" id="headNav" aria-label="Main">
       <a href="#catalogue">The Fihrist</a>
       <a href="#why">The Author</a>
       <a href="#reading">Reading Room</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="head-actions">
+      <button class="icon-btn menu-toggle" id="mobileMenuToggle" aria-label="Open main menu" aria-controls="headNav" aria-expanded="false">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
       <button class="icon-btn" id="searchToggle" aria-label="Search" aria-controls="searchbar" aria-expanded="false">
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
       </button>
@@ -379,7 +388,7 @@ export const alFurqaanHtml = `
           <input type="email" placeholder="your@email.com" required aria-label="Your email address" />
           <button type="submit" class="btn btn-primary">Subscribe</button>
         </form>
-        <p class="form-msg" id="letterMsg"></p>
+        <p class="form-msg" id="letterMsg" role="status" aria-live="polite"></p>
       </div>
     </div>
 
@@ -475,7 +484,7 @@ export const alFurqaanHtml = `
           <p class="co-note">No real charge is made. Use any plausible details.</p>
         </div>
       </div>
-      <p class="co-error" id="coError" hidden></p>
+      <p class="co-error" id="coError" role="alert" hidden></p>
       <button type="submit" class="btn btn-primary full">Place Order &middot; <span id="coSum">&#8358;0.00</span></button>
     </form>
   </div>

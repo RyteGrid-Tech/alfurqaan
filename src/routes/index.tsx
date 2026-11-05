@@ -1,24 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { alFurqaanHtml } from "@/lib/alfurqaan-page";
-import pathToParadise from "@/assets/path-to-paradise.jpg.asset.json";
-import islamAndChristianity from "@/assets/islam-and-christianity.jpg.asset.json";
-import quranicParables from "@/assets/quranic-parables.jpg.asset.json";
-import modernIntroduction from "@/assets/modern-introduction-to-islam.jpg.asset.json";
-import whatIsSunnah from "@/assets/what-is-sunnah.jpg.asset.json";
-import critiqueTijaniyyah from "@/assets/critique-tijaniyyah.jpg.asset.json";
-import islamicIdeology from "@/assets/islamic-ideology.jpg.asset.json";
-import muslimPrayers from "@/assets/muslim-prayers.jpg.asset.json";
+import pathToParadise from "@/assets/path-to-paradise.webp";
+import islamAndChristianity from "@/assets/islam-and-christianity-why-conflict.webp";
+import quranicParables from "@/assets/quranic-parables.webp";
+import modernIntroduction from "@/assets/modern-introduction-to-islam.webp";
+import whatIsSunnah from "@/assets/what-is-sunnah.webp";
+import critiqueTijaniyyah from "@/assets/critique-tijaniyyah.webp";
+import islamicIdeology from "@/assets/islamic-ideology.webp";
+import muslimPrayers from "@/assets/muslim-prayers-everyday-success.webp";
 
 const COVERS: Record<string, string> = {
-  "path-to-paradise": pathToParadise.url,
-  "islam-christianity-why-conflict": islamAndChristianity.url,
-  "a-book-of-quranic-parables": quranicParables.url,
-  "a-modern-introduction-to-islam": modernIntroduction.url,
-  "what-is-sunnah-what-is-bidah": whatIsSunnah.url,
-  "critique-tijaniyyah-handbook": critiqueTijaniyyah.url,
-  "islamic-ideology-democratic-socialism": islamicIdeology.url,
-  "muslim-prayers-everyday-success": muslimPrayers.url,
+  "path-to-paradise": pathToParadise,
+  "islam-christianity-why-conflict": islamAndChristianity,
+  "a-book-of-quranic-parables": quranicParables,
+  "a-modern-introduction-to-islam": modernIntroduction,
+  "what-is-sunnah-what-is-bidah": whatIsSunnah,
+  "critique-tijaniyyah-handbook": critiqueTijaniyyah,
+  "islamic-ideology-democratic-socialism": islamicIdeology,
+  "muslim-prayers-everyday-success": muslimPrayers,
 };
 
 export const Route = createFileRoute("/")({
