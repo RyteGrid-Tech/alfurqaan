@@ -44,8 +44,21 @@
     if (lastFocus && typeof lastFocus.focus === "function") { lastFocus.focus(); }
     lastFocus = null;
   }
+  function setMobileMenu(open) {
+    var nav = $("headNav"), toggle = $("mobileMenuToggle");
+    if (!nav || !toggle) return;
+    nav.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute("aria-label", open ? "Close main menu" : "Open main menu");
+  }
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") {
+      var nav = $("headNav"), menuToggle = $("mobileMenuToggle");
+      if (nav && nav.classList.contains("is-open")) {
+        setMobileMenu(false);
+        if (menuToggle) menuToggle.focus();
+        return;
+      }
       for (var i = 0; i < MODALS.length; i++) {
         var m = $(MODALS[i]);
         if (m && !m.hidden) { closeDialog(m); return; }
@@ -255,7 +268,7 @@
   $("checkoutBtn").addEventListener("click", function () {
     closeDialog($("cartDrawer"));
     $("cartToggle").setAttribute("aria-expanded", "false");
-    openDialog($("checkoutModal"), this);
+    openDialog($("checkoutModal"), $("cartToggle"));
   });
   $("checkoutClose").addEventListener("click", function () { closeDialog($("checkoutModal")); });
   $("checkoutModal").addEventListener("click", function (e) { if (e.target === this) closeDialog(this); });
@@ -277,7 +290,7 @@
     }).join("<br>");
     $("successText").textContent = "Salam, " + name.split(" ")[0] + "! Your order has been received and a confirmation will reach " + email + " shortly.";
     $("successOrder").innerHTML = "<strong>Order summary:</strong><br>" + items + "<br><strong>Total: " + fmtPrice(total) + "</strong>";
-    openDialog($("successModal"), null);
+    openDialog($("successModal"), $("cartToggle"));
     cart = []; saveCart(); renderCart();
     this.reset();
   });
@@ -289,6 +302,19 @@
     this.reset();
     setTimeout(function () { $("letterMsg").textContent = ""; }, 4000);
   });
+
+  var menuToggle = $("mobileMenuToggle");
+  if (menuToggle) {
+    menuToggle.addEventListener("click", function () {
+      setMobileMenu(this.getAttribute("aria-expanded") !== "true");
+    });
+    $("headNav").addEventListener("click", function (e) {
+      if (e.target.closest("a")) setMobileMenu(false);
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 768) setMobileMenu(false);
+    });
+  }
 
   var headScrolled = false;
   window.addEventListener("scroll", function () {
