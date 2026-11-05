@@ -5,13 +5,13 @@
   var COVERS = (typeof window !== "undefined" && window.AF_COVERS) || {};
   var B = [
     { id: "a-modern-introduction-to-islam", title: "A Modern Introduction to Islam", author: AUTHOR, category: "Basics of Islam", desc: "A clear, comprehensive and authentic guide to Islam — the Articles of Faith, the Pillars, Shari'ah, Jihad and social justice, explained with the precision of a legal expert and the heart of a believer.", year: 2026, pricePrint: 2500, priceEbook: 2500, cover: COVERS["a-modern-introduction-to-islam"], color: "#1b4d3e" },
-    { id: "muslim-prayers-everyday-success", title: "Muslim Prayers for Everyday Success", author: AUTHOR, category: "Du'a & Prayers", print: true, desc: "A spiritual toolkit of authentic supplications from the Prophet ﷺ — for protection from witchcraft and the evil eye, prosperity, righteous sleep, matrimonial harmony and guidance through Istikhaarah.", year: 2026, pricePrint: 11999, priceEbook: 6000, color: "#2a1b3d" },
+    { id: "muslim-prayers-everyday-success", title: "Muslim Prayers for Everyday Success", author: AUTHOR, category: "Du'a & Prayers", print: true, desc: "A spiritual toolkit of authentic supplications from the Prophet ﷺ — for protection from witchcraft and the evil eye, prosperity, righteous sleep, matrimonial harmony and guidance through Istikhaarah.", year: 2026, pricePrint: 11999, priceEbook: 6000, cover: COVERS["muslim-prayers-everyday-success"], color: "#2a1b3d" },
     { id: "islam-christianity-why-conflict", title: "Islam and Christianity: Why the Conflict?", author: AUTHOR, category: "Comparative Religion", desc: "A forensic investigation into the roots of the Muslim–Christian divide. Using the Bible itself, the author traces Christian doctrine from pure Monotheism to the Church Councils — and calls for a return to the worship of One God.", year: 2026, pricePrint: 2500, priceEbook: 2500, cover: COVERS["islam-christianity-why-conflict"], color: "#6b3a2a" },
     { id: "a-book-of-quranic-parables", title: "A Book of Qur'anic Parables", author: AUTHOR, category: "Qur'an Study", desc: "A guided tour through the parables of the Qur'an — the spider's fragile web, the garden struck by a whirlwind, the light within a niche — turning the abstract realities of faith into vivid, unforgettable lessons.", year: 2026, pricePrint: 3500, priceEbook: 3500, cover: COVERS["a-book-of-quranic-parables"], color: "#2d6a4f" },
     { id: "critique-tijaniyyah-handbook", title: "A Critique of Dr. Adekilekun Tijani's Hand-book on the Tijaniyyah", author: AUTHOR, category: "Aqidah", desc: "A fearless, evidence-based response to the Handbook on Tijaniyyah — dissecting its claims page by page before the supreme authority of the Qur'an and the authentic Sunnah, with the precision of a legal practitioner.", year: 2026, pricePrint: 3000, priceEbook: 3000, cover: COVERS["critique-tijaniyyah-handbook"], color: "#4a2c1a" },
     { id: "what-is-sunnah-what-is-bidah", title: "What is Sunnah? What is Bid'ah?", author: AUTHOR, category: "Sunnah & Bid'ah", desc: "The perfection of Islam needs no additions. Written by Barrister Abdur-Raheem Adebayo Shittu, this clarity-inducing guide separates the gold of the Prophetic Tradition from the dust of cultural innovation — a hard look at common innovations in funerals, weddings and daily worship, weighing the evidence for each practice with the author's legal background. Return to the simplicity, beauty and ease of the Sunnah.", year: 2026, pricePrint: 2500, priceEbook: 2500, cover: COVERS["what-is-sunnah-what-is-bidah"], color: "#3a2a50" },
     { id: "path-to-paradise", title: "Path to Paradise", author: AUTHOR, category: "Afterlife", desc: "A clear map for the only journey that is guaranteed. A vivid, spiritually grounded guide through the stages of the Afterlife — the life of Barzakh, the questioning in the grave, the Day of Reckoning, the crossing of the Sirat bridge, and the two destinations: the Bliss of Jannah and the reality of Jahannam — based entirely on the Qur'an and the authentic Sunnah. It distinguishes the Road to Paradise from the Road to Hell, urging every believer: don't meet your Creator unprepared.", year: 2026, pricePrint: 2500, priceEbook: 2500, cover: COVERS["path-to-paradise"], color: "#1a4a3d" },
-    { id: "islamic-ideology-democratic-socialism", title: "Islamic Ideology: Path to Democratic Socialism in Nigeria", author: AUTHOR, category: "Islamic Thought", desc: "Capitalism has failed. Communism is dead. What is the path forward? A bold intellectual manifesto arguing that the blueprint for justice lies in the Qur'an and Sunnah: true Islam is by nature a form of democratic socialism — protecting the weak, redistributing wealth through Zakat, and holding leaders accountable to God. It dissects the failure of capitalism and the flaws of Marxism, and sets out a blueprint for a just, egalitarian Nigeria where leadership is a trust, not a means of enrichment.", year: 2026, pricePrint: 2500, priceEbook: 2500, color: "#5a2a3a" }
+    { id: "islamic-ideology-democratic-socialism", title: "Islamic Ideology: Path to Democratic Socialism in Nigeria", author: AUTHOR, category: "Islamic Thought", desc: "Capitalism has failed. Communism is dead. What is the path forward? A bold intellectual manifesto arguing that the blueprint for justice lies in the Qur'an and Sunnah: true Islam is by nature a form of democratic socialism — protecting the weak, redistributing wealth through Zakat, and holding leaders accountable to God. It dissects the failure of capitalism and the flaws of Marxism, and sets out a blueprint for a just, egalitarian Nigeria where leadership is a trust, not a means of enrichment.", year: 2026, pricePrint: 2500, priceEbook: 2500, cover: COVERS["islamic-ideology-democratic-socialism"], color: "#5a2a3a" }
   ];
 
   var cart = JSON.parse(localStorage.getItem("afCart") || "[]");
@@ -44,8 +44,21 @@
     if (lastFocus && typeof lastFocus.focus === "function") { lastFocus.focus(); }
     lastFocus = null;
   }
+  function setMobileMenu(open) {
+    var nav = $("headNav"), toggle = $("mobileMenuToggle");
+    if (!nav || !toggle) return;
+    nav.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute("aria-label", open ? "Close main menu" : "Open main menu");
+  }
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") {
+      var nav = $("headNav"), menuToggle = $("mobileMenuToggle");
+      if (nav && nav.classList.contains("is-open")) {
+        setMobileMenu(false);
+        if (menuToggle) menuToggle.focus();
+        return;
+      }
       for (var i = 0; i < MODALS.length; i++) {
         var m = $(MODALS[i]);
         if (m && !m.hidden) { closeDialog(m); return; }
@@ -255,7 +268,7 @@
   $("checkoutBtn").addEventListener("click", function () {
     closeDialog($("cartDrawer"));
     $("cartToggle").setAttribute("aria-expanded", "false");
-    openDialog($("checkoutModal"), this);
+    openDialog($("checkoutModal"), $("cartToggle"));
   });
   $("checkoutClose").addEventListener("click", function () { closeDialog($("checkoutModal")); });
   $("checkoutModal").addEventListener("click", function (e) { if (e.target === this) closeDialog(this); });
@@ -277,7 +290,7 @@
     }).join("<br>");
     $("successText").textContent = "Salam, " + name.split(" ")[0] + "! Your order has been received and a confirmation will reach " + email + " shortly.";
     $("successOrder").innerHTML = "<strong>Order summary:</strong><br>" + items + "<br><strong>Total: " + fmtPrice(total) + "</strong>";
-    openDialog($("successModal"), null);
+    openDialog($("successModal"), $("cartToggle"));
     cart = []; saveCart(); renderCart();
     this.reset();
   });
@@ -289,6 +302,19 @@
     this.reset();
     setTimeout(function () { $("letterMsg").textContent = ""; }, 4000);
   });
+
+  var menuToggle = $("mobileMenuToggle");
+  if (menuToggle) {
+    menuToggle.addEventListener("click", function () {
+      setMobileMenu(this.getAttribute("aria-expanded") !== "true");
+    });
+    $("headNav").addEventListener("click", function (e) {
+      if (e.target.closest("a")) setMobileMenu(false);
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 768) setMobileMenu(false);
+    });
+  }
 
   var headScrolled = false;
   window.addEventListener("scroll", function () {

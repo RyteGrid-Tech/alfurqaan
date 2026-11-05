@@ -6,3 +6,4 @@
 - [x] Mobile responsiveness verification at 390px, larger tap targets
 - [x] Real cover scans mapped to 6 books via lovable-assets; Muslim Prayers + Islamic Ideology keep SVG placeholder (no scan uploaded)
 - [x] Verify end-to-end in preview (mobile + desktop), build log clean
+- [ ] Make book cover images deploy with project files rather than depend on Lovable-hosted image URLs; verify all eight covers load in preview and assess Cloudflare/GitHub static hosting

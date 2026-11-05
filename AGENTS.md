@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep bookstore cover images as local imported project assets, not Lovable-hosted CDN URLs, so they remain available in self-hosted builds.
