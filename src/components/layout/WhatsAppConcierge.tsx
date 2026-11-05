@@ -19,7 +19,7 @@ export function WhatsAppConcierge() {
     >
       {/* Popover Card */}
       {isOpen && (
-        <div className="mb-3 w-80 sm:w-88 bg-[#f4efe0] text-[#0c2b22] border border-[#0c2b22]/20 shadow-2xl p-4 animate-in fade-in slide-in-from-bottom-2 duration-200">
+        <div className="mb-3 w-[calc(100vw-2rem)] max-w-xs sm:w-88 bg-[#f4efe0] text-[#0c2b22] border border-[#0c2b22]/20 shadow-2xl p-4 animate-in fade-in slide-in-from-bottom-2 duration-200">
           <div className="flex items-start justify-between pb-3 border-b border-[#0c2b22]/10">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-[#0c2b22] text-[#c9a35c] grid place-items-center">

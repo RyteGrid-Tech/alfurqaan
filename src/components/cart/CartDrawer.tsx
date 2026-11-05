@@ -48,12 +48,12 @@ export function CartDrawer() {
     >
       {/* Slide-over panel */}
       <div
-        className="fixed inset-y-0 right-0 flex max-w-full pl-10"
+        className="fixed inset-y-0 right-0 flex max-w-full pl-4 sm:pl-10"
         onClick={(e) => {
           if (e.target === e.currentTarget) setIsCartOpen(false);
         }}
       >
-        <div className="w-screen max-w-md bg-[#f4efe0] border-l border-[#0c2b22]/15 shadow-2xl flex flex-col animate-in slide-in-from-right duration-300">
+        <div className="w-full max-w-md bg-[#f4efe0] border-l border-[#0c2b22]/15 shadow-2xl flex flex-col animate-in slide-in-from-right duration-300">
           {/* Header */}
           <div className="p-5 border-b border-[#0c2b22]/10 flex items-center justify-between bg-[#f4efe0]">
             <div className="flex items-center gap-2">

@@ -52,7 +52,7 @@ function IndexPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f4efe0] text-[#0c2b22] font-serif selection:bg-[#c9a35c] selection:text-[#07201a]">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#f4efe0] text-[#0c2b22] font-serif selection:bg-[#c9a35c] selection:text-[#07201a]">
       {/* Skip to Main Content Link for Screen Readers */}
       <a
         href="#catalogue"

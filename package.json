@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "build:workers": "vite build",
+    "build:pages": "NITRO_PRESET=cloudflare-pages vite build",
     "build:dev": "vite build --mode development",
+    "deploy:workers": "npx wrangler deploy --config .output/server/wrangler.json",
+    "deploy:pages": "npx wrangler pages deploy dist",
     "preview": "vite preview",
     "test": "bun test",
     "lint": "eslint .",

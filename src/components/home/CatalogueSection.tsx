@@ -62,7 +62,7 @@ export function CatalogueSection({ searchQuery, setSearchQuery }: CatalogueSecti
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pb-4 border-b border-[#0c2b22]/10">
         {/* Category Filter Chips with Horizontal Scroll on Mobile */}
         <div
-          className="flex items-center gap-1.5 overflow-x-auto pb-2 md:pb-0 scrollbar-none w-full md:w-auto"
+          className="flex items-center gap-1.5 overflow-x-auto pb-2 md:pb-0 scrollbar-none w-full md:w-auto touch-pan-x"
           role="tablist"
           aria-label="Filter books by category"
         >

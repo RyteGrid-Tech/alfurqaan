@@ -4,11 +4,11 @@ import { ArrowDown, BookOpen } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[85vh] flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 pt-16 pb-12 overflow-hidden bg-[#f4efe0]">
+    <section className="relative min-h-[85vh] flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 pt-16 pb-12 overflow-hidden overflow-x-clip max-w-full w-full bg-[#f4efe0]">
       {/* Classical Geometric Watermark Background */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20 overflow-hidden max-w-full">
         <svg
-          className="w-[min(85vw,600px)] h-[min(85vw,600px)] animate-[spin_60s_linear_infinite]"
+          className="w-[min(65vw,450px)] h-[min(65vw,450px)] max-w-full max-h-full animate-[spin_60s_linear_infinite]"
           viewBox="0 0 200 200"
           fill="none"
           stroke="#c9a35c"

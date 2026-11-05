@@ -83,3 +83,21 @@ Transform the Al Furqaan Publishers website into a remarkable, mobile-first, sch
 - [x] Implement multi-currency engine (`src/lib/currency.ts`) supporting Nigerian Naira (₦), US Dollar ($), British Pound (£), Euro (€), and Ghanaian Cedi (GH₵) with instant conversion across all book cards and modals
 - [x] Deploy floating authentic Islamic WhatsApp Concierge (`src/components/layout/WhatsAppConcierge.tsx`) for personalized book inquiries, bank transfer confirmations, and wholesale orders
 - [x] Add automated test suite for excerpts and look inside logic (`src/data/excerpts.test.ts`)
+
+---
+
+## 📌 Phase 8: Mobile Viewport Zero-Overflow Hardening & Cloudflare Dual Deployment
+
+- [x] Eliminate mobile horizontal overflow (page sliding left/right on mobile screens):
+  - [x] Restrict `html` and `body` with `overflow-x: hidden; max-width: 100%; width: 100%; position: relative;`
+  - [x] Add `overflow-x-hidden max-w-full w-full` to root shells and routes (`__root.tsx`, `index.tsx`, `books/$bookId.tsx`, `admin.tsx`)
+  - [x] Eliminate mobile header action congestion in `SiteHeader.tsx` (compact currency dropdown, hide redundant search icon on mobile `< md`, use `w-9 h-9 sm:w-11 sm:h-11` buttons)
+  - [x] Strictly contain hero watermark rotating star SVG (`w-[min(65vw,450px)]` with `overflow-hidden` wrapper and `overflow-x-clip` section)
+  - [x] Contain 3D visual book stack in `ReadingRoomSection.tsx` (`overflow-hidden` container and section)
+  - [x] Constrain mobile popovers in `WhatsAppConcierge.tsx` (`w-[calc(100vw-2rem)] max-w-xs`) and `CartDrawer.tsx` (`w-full max-w-md`)
+  - [x] Add `touch-pan-x` to horizontal category filter chips in `CatalogueSection.tsx`
+- [x] Verify Cloudflare Workers & Cloudflare Pages dual hosting compatibility:
+  - [x] Cloudflare Workers: Nitro default preset `cloudflare-module` generates `.output/server/wrangler.json` with static asset bindings
+  - [x] Cloudflare Pages: `NITRO_PRESET=cloudflare-pages` generates `dist/` with `_worker.js`, `_routes.json`, and static assets
+  - [x] Added dedicated npm scripts in `package.json` (`build:workers`, `build:pages`, `deploy:workers`, `deploy:pages`)
+  - [x] Documented detailed deployment instructions in `README.md`

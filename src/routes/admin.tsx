@@ -108,7 +108,7 @@ export function AdminPage() {
   const promoCopyTwitter = `True knowledge, beautifully bound. Explore "${selectedBookForPromo.title}" by Barrister (Dr.) Abdur-Raheem Adebayo Shittu.\n\nRead the classical legal & theological insights on ${selectedBookForPromo.category}.\n\nBuy instant ebook on @tryselar or order print editions:\n${selectedBookForPromo.selarUrl}\n\n#Islam #AlFurqaan #AdebayoShittu #Nigeria`;
 
   return (
-    <div className="min-h-screen bg-[#f4efe0] text-[#0c2b22] font-serif selection:bg-[#c9a35c] selection:text-[#07201a]">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#f4efe0] text-[#0c2b22] font-serif selection:bg-[#c9a35c] selection:text-[#07201a]">
       {/* Top Admin Header */}
       <header className="bg-[#07201a] text-[#ece5d2] border-b border-[#c9a35c]/20 py-4 px-4 sm:px-6 lg:px-8 sticky top-0 z-30">
         <div className="max-w-7xl mx-auto flex items-center justify-between">

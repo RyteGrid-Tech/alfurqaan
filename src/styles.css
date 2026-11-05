@@ -139,6 +139,9 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
   }
 
   body {
@@ -146,6 +149,9 @@
     color: #0c2b22;
     font-family: "Cormorant Garamond", Georgia, serif;
     overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+    position: relative;
   }
 
   h1,

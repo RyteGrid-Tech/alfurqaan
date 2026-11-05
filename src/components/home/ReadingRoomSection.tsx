@@ -30,7 +30,7 @@ export function ReadingRoomSection() {
   return (
     <section
       id="reading"
-      className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#ece5d2] to-[#f4efe0] scroll-mt-20"
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#ece5d2] to-[#f4efe0] scroll-mt-20 overflow-hidden overflow-x-clip max-w-full w-full"
     >
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         {/* Left: Reading Pathways */}
@@ -89,7 +89,7 @@ export function ReadingRoomSection() {
         </div>
 
         {/* Right: 3D Visual Book Stack */}
-        <div className="w-full lg:w-96 flex justify-center py-6">
+        <div className="w-full lg:w-96 flex justify-center py-6 overflow-hidden max-w-full">
           <div className="relative w-64 h-80 select-none">
             {/* Book 1 (Bottom) */}
             <div className="absolute inset-0 bg-[#1d4f3f] text-[#ece5d2] p-5 shadow-2xl border border-[#c9a35c]/30 transform rotate-6 translate-x-4 translate-y-4 transition-transform hover:rotate-3 flex flex-col justify-between">

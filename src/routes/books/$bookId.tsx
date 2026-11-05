@@ -93,7 +93,7 @@ function BookDetailPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f4efe0] text-[#0c2b22] font-serif selection:bg-[#c9a35c] selection:text-[#07201a]">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#f4efe0] text-[#0c2b22] font-serif selection:bg-[#c9a35c] selection:text-[#07201a]">
       <SiteHeader searchQuery={headerSearch} setSearchQuery={setHeaderSearch} />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
