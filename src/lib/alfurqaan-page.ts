@@ -54,7 +54,7 @@ export const alFurqaanHtml = `
 .btn-primary{background:#0c2b22;color:#f4efe0;border-color:#0c2b22}
 .btn-primary:hover{background:#c9a35c;border-color:#c9a35c;color:#07201a}
 .btn-ghost{background:transparent;color:#0c2b22;border-color:rgba(12,43,34,.2)}
-.btn-ghost:hover{border-color:#c9a35c;color:#c9a35c}
+.btn-ghost:hover{border-color:#7d5e1a;color:#7d5e1a}
 .btn-ghost-dark{background:transparent;color:#f4efe0;border-color:rgba(244,239,224,.3)}
 .btn-ghost-dark:hover{border-color:#e2c380;color:#e2c380}
 .full{width:100%;justify-content:center}
@@ -65,10 +65,10 @@ export const alFurqaanHtml = `
 .catalogue{padding:100px 28px 80px;max-width:1240px;margin:0 auto}
 .filterbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:42px}
 .filter-chips{display:flex;gap:8px;flex-wrap:wrap}
-.chip{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:7px 18px;border:1px solid rgba(12,43,34,.15);background:transparent;color:#5a6b58;cursor:pointer;transition:all .2s}
+.chip{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:7px 18px;border:1px solid #5a6b58;background:transparent;color:#5a6b58;cursor:pointer;transition:all .2s}
 .chip.active,.chip:hover{background:#0c2b22;color:#f4efe0;border-color:#0c2b22}
 .format-toggle{display:flex;align-items:center;gap:10px;cursor:pointer}
-.format-toggle input{display:none}
+.format-toggle input{position:absolute;width:1px;height:1px;opacity:0}
 .toggle-track{width:44px;height:24px;border-radius:12px;background:rgba(12,43,34,.12);position:relative;transition:background .3s}
 .toggle-knob{position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;background:#f4efe0;box-shadow:0 1px 4px rgba(0,0,0,.15);transition:transform .3s}
 .format-toggle input:checked+.toggle-track{background:#0c2b22}
@@ -82,13 +82,13 @@ export const alFurqaanHtml = `
 .card-cover img,.card-cover svg{width:100%;height:100%;object-fit:cover;display:block}
 .card-badge{position:absolute;top:12px;right:12px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;background:#e2c380;color:#07201a}
 .card-format{display:flex;gap:6px;margin-bottom:10px}
-.card-format button{font-family:'Jost',sans-serif;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;padding:4px 12px;border:1px solid rgba(12,43,34,.12);background:transparent;color:#4f6857;transition:all .2s}
+.card-format button{font-family:'Jost',sans-serif;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;padding:4px 12px;border:1px solid #5a6b58;background:transparent;color:#4f6857;transition:all .2s}
 .card-format button.active{background:#0c2b22;color:#f4efe0;border-color:#0c2b22}
 .card-title{font-family:'Marcellus',serif;font-size:18px;color:#0c2b22;margin-bottom:4px}
 .card-author{font-size:15px;color:#4f6857;font-style:italic;margin-bottom:8px}
 .card-footer{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
 .card-price{font-family:'Marcellus',serif;font-size:17px;color:#7d5e1a}
-.card-add{width:32px;height:32px;display:grid;place-items:center;border:1px solid rgba(12,43,34,.12);background:transparent;color:#5a6b58;font-size:18px;transition:all .2s}
+.card-add{width:32px;height:32px;display:grid;place-items:center;border:1px solid #5a6b58;background:transparent;color:#5a6b58;font-size:18px;transition:all .2s}
 .card-add:hover{border-color:#7d5e1a;color:#7d5e1a;background:rgba(201,163,92,.06)}
 .empty{text-align:center;color:#4f6857;font-size:20px;font-style:italic;padding:60px 0}
 .why{background:#07201a;color:#ece5d2;padding:100px 28px 80px;position:relative;overflow:hidden}
@@ -155,7 +155,7 @@ export const alFurqaanHtml = `
 .qv-meta{display:flex;gap:18px;flex-wrap:wrap;font-family:'Jost',sans-serif;font-size:11px;color:#546553;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(12,43,34,.08)}
 .qv-desc{font-size:16px;color:#5a6b58;line-height:1.6;margin-bottom:20px}
 .qv-format{margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap}
-.qv-format button{font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.04em;padding:8px 18px;border:1px solid rgba(12,43,34,.12);background:transparent;color:#5a6b58;transition:all .2s}
+.qv-format button{font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.04em;padding:8px 18px;border:1px solid #5a6b58;background:transparent;color:#5a6b58;transition:all .2s}
 .qv-format button.active{background:#0c2b22;color:#f4efe0;border-color:#0c2b22}
 .qv-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
 .qv-price{font-family:'Marcellus',serif;font-size:24px;color:#7d5e1a}
@@ -172,7 +172,7 @@ export const alFurqaanHtml = `
 .cart-item-info h4{font-size:15px;color:#0c2b22;margin-bottom:2px}
 .cart-item-info .fmt{font-size:11px;color:#4f6857;font-style:italic}
 .cart-item-qty{display:flex;align-items:center;gap:6px;margin-top:6px}
-.cart-item-qty button{width:24px;height:24px;display:grid;place-items:center;border:1px solid rgba(12,43,34,.12);background:none;font-size:14px;color:#5a6b58;transition:all .2s}
+.cart-item-qty button{width:24px;height:24px;display:grid;place-items:center;border:1px solid #5a6b58;background:none;font-size:14px;color:#5a6b58;transition:all .2s}
 .cart-item-qty button:hover{border-color:#c9a35c}
 .cart-item-qty span{font-family:'Jost',sans-serif;font-size:13px;width:20px;text-align:center}
 .cart-item-price{font-size:15px;color:#7d5e1a;text-align:right}
@@ -187,7 +187,7 @@ export const alFurqaanHtml = `
 .checkout-head h2{font-size:28px}
 .checkout form{padding:0 36px 36px}
 .co-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:24px}
-.co-h4{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#c9a35c;margin-bottom:14px}
+.co-h4{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7d5e1a;margin-bottom:14px}
 .co-h4 em{color:#8fa893;font-style:italic;text-transform:none;letter-spacing:0}
 .checkout label{display:block;font-family:'Jost',sans-serif;font-size:11px;color:#546553;margin-bottom:10px}
 .checkout input,.checkout textarea{width:100%;font-family:'Cormorant Garamond',serif;font-size:16px;padding:10px 14px;border:1px solid rgba(12,43,34,.12);background:#fff;color:#0c2b22;outline:none;resize:vertical}
@@ -210,14 +210,16 @@ export const alFurqaanHtml = `
  @media(max-width:768px){.head-inner{gap:12px;padding:12px 16px}.head-nav{display:none}.brand{gap:9px;min-width:0}.brand-seal{width:42px;height:42px;font-size:20px;flex-shrink:0}.brand-text{min-width:0}.brand-text strong{font-size:16px;white-space:nowrap}.brand-text em{font-size:12px}.head-actions{flex-shrink:0}.hero{padding:72px 16px 54px;min-height:auto}.hero-kicker{max-width:330px;margin-bottom:24px}.hero-title{font-size:2.4rem}.hero-sub{max-width:520px;margin-bottom:32px}.hero-cta{width:min(100%,320px);gap:12px;margin-bottom:36px}.hero-cta .btn{width:100%;justify-content:center}.hero-meta{flex-direction:column;gap:8px;align-items:center}.catalogue{padding:72px 16px 64px}.section-head{margin-bottom:32px}.section-note{font-size:17px}.filterbar{align-items:flex-start;gap:18px;margin-bottom:30px}.filter-chips{width:calc(100% + 32px);margin-inline:-16px;padding-inline:16px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.filter-chips::-webkit-scrollbar{display:none}.chip{flex:0 0 auto;padding-inline:14px}.format-toggle{width:100%;justify-content:flex-end}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 14px}.card-cover{margin-bottom:11px}.card-badge{top:8px;right:8px;padding:3px 7px;font-size:9px}.card-format{gap:4px}.card-format button{padding-inline:8px;font-size:10px}.card-title{overflow-wrap:anywhere}.why{padding:72px 16px 62px}.why-grid{grid-template-columns:1fr;gap:16px;margin-bottom:40px}.why-card{padding:22px}.reading{padding:72px 16px 62px}.reading-inner{gap:28px}.reading-text{min-width:0}.contact{padding:62px 16px 0}.contact-card{padding:24px 18px;gap:24px}.letter-form{flex-direction:column;width:100%}.letter-form input{min-width:0;width:100%}.site-foot{padding:0 16px 48px;gap:30px}.foot-brand{min-width:0;width:100%}.foot-cols{gap:28px;width:100%;justify-content:space-between}.modal-backdrop{padding:12px}.modal{flex-direction:column;max-width:100%;max-height:calc(100vh - 24px)}.modal-cover{flex:0 0 auto;height:210px}.modal-info{padding:28px 20px}.cart-drawer{width:100vw}.cart-head,.cart-body,.cart-foot{padding-inline:18px}.cart-item{gap:10px}.co-grid{grid-template-columns:1fr;gap:16px}.checkout-head{padding:28px 20px 16px}.checkout form{padding:0 20px 24px}.success-modal{padding:36px 20px}.toast{bottom:16px;width:calc(100% - 32px);text-align:center}}
 @media(max-width:480px){.hero-kicker{font-size:18px}.hero-title{font-size:2rem}.hero-sub{font-size:17px}.section-head h2{font-size:1.7rem}.grid{gap:22px 10px}.card-title{font-size:15px}.card-author{font-size:14px}.card-price{font-size:15px}.card-add{width:44px;height:44px}.cart-head .icon-btn{width:44px;height:44px}.qv-format button{min-height:44px}}
 
-.af-page :focus-visible{outline:2px solid #c9a35c;outline-offset:2px;box-shadow:0 0 0 4px rgba(7,32,26,.55)}
+.af-page :focus-visible{outline:2px solid #0c2b22;outline-offset:2px;box-shadow:0 0 0 4px rgba(244,239,224,.9)}
+.af-page .why :focus-visible{outline-color:#e2c380;box-shadow:0 0 0 4px rgba(7,32,26,.9)}
 .af-page .skip-link{position:absolute;left:16px;top:-60px;z-index:1300;background:#0c2b22;color:#f4efe0;font-family:'Jost',sans-serif;font-size:13px;padding:10px 18px;transition:top .2s}
 .af-page .skip-link:focus{top:12px}
 .af-page .menu-toggle{display:none}
+.af-page .visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 .af-page .format-toggle{position:relative}
 .af-page .format-toggle input{display:block;position:absolute;left:0;top:0;width:44px;height:44px;margin:0;opacity:0;cursor:pointer}
-.af-page .format-toggle input:focus-visible+.toggle-track{outline:2px solid #c9a35c;outline-offset:2px;box-shadow:0 0 0 4px rgba(7,32,26,.55)}
-.af-page .letter-form input:focus-visible,.af-page .checkout input:focus-visible,.af-page .checkout textarea:focus-visible{outline:2px solid #c9a35c;outline-offset:2px}
+.af-page .format-toggle input:focus-visible+.toggle-track{outline:2px solid #0c2b22;outline-offset:2px;box-shadow:0 0 0 4px rgba(244,239,224,.9)}
+.af-page .letter-form input:focus-visible,.af-page .checkout input:focus-visible,.af-page .checkout textarea:focus-visible{outline:2px solid #0c2b22;outline-offset:2px}
 .af-page .card-cover img,.af-page .modal-cover img,.af-page .cart-item-cover img{object-fit:cover}
 @media(prefers-reduced-motion:reduce){.af-page *,.af-page *::before,.af-page *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 @media(max-width:768px){.icon-btn{width:44px;height:44px}.af-page .menu-toggle{display:grid}.head-inner{position:relative}.head-nav{display:none}.head-nav.is-open{display:flex;position:absolute;top:100%;left:0;right:0;z-index:901;flex-direction:column;align-items:stretch;gap:0;padding:8px 16px 14px;background:#f4efe0;border-bottom:1px solid rgba(12,43,34,.15);box-shadow:0 8px 18px rgba(7,32,26,.12)}.head-nav.is-open a{display:flex;align-items:center;min-height:48px;padding:8px 4px;border-bottom:1px solid rgba(12,43,34,.08)}.head-nav.is-open a:last-child{border-bottom:0}.card-add{width:44px;height:44px;font-size:20px}.chip{min-height:44px;padding:9px 16px}.cart-item-qty button{width:44px;height:44px;font-size:16px}.modal-x{width:44px;height:44px}.search-clear{min-width:44px;min-height:44px;padding:8px 10px}.cart-item-remove{min-height:44px;padding:8px 0;font-size:15px}.card-format button{min-height:44px;padding:7px 12px;font-size:11px}}

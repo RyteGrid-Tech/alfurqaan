@@ -41,6 +41,7 @@
   }
   function closeDialog(el) {
     el.hidden = true;
+    if (el.id === "cartDrawer") $("cartToggle").setAttribute("aria-expanded", "false");
     if (lastFocus && typeof lastFocus.focus === "function") { lastFocus.focus(); }
     lastFocus = null;
   }
@@ -178,8 +179,13 @@
   function renderGrid() {
     var books = filtered();
     var grid = $("grid"), empty = $("empty");
-    if (books.length === 0) { grid.innerHTML = ""; empty.hidden = false; return; }
+    if (books.length === 0) {
+      grid.innerHTML = ""; empty.hidden = false;
+      $("catalogueStatus").textContent = "No books match your search or category.";
+      return;
+    }
     empty.hidden = true;
+    $("catalogueStatus").textContent = books.length + (books.length === 1 ? " book shown." : " books shown.");
     var h = "";
     books.forEach(function (b) {
       h += '<article class="card" data-bookid="' + b.id + '" aria-label="' + esc(b.title) + ', ' + fmtPrice(b.pricePrint) + '">' +
