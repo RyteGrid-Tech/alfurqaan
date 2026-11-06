@@ -9,12 +9,10 @@ import {
   lazyRouteComponent,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
-import { useEffect, useMemo, type ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { CartProvider } from "../lib/cart-context";
-import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -39,7 +37,7 @@ function NotFoundComponent() {
 }
 
 function ErrorComponent({ error, reset }: ErrorComponentProps) {
-  const err = useMemo(() => (error instanceof Error ? error : new Error(String(error))), [error]);
+  const err = error instanceof Error ? error : new Error(String(error));
   console.error(err);
   const router = useRouter();
   useEffect(() => {
@@ -117,11 +115,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="overflow-x-hidden max-w-full w-full">
+    <html lang="en">
       <head>
         <HeadContent />
       </head>
-      <body className="overflow-x-hidden max-w-full w-full relative">
+      <body>
         {children}
         <Scripts />
       </body>
@@ -134,11 +132,8 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <CartProvider>
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
-        <Toaster position="bottom-center" richColors />
-      </CartProvider>
+      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+      <Outlet />
     </QueryClientProvider>
   );
 }
