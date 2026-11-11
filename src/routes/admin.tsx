@@ -23,20 +23,18 @@ import {
   Layers,
 } from "lucide-react";
 import { toast } from "sonner";
+import { getRequestOrigin } from "@/lib/seo";
+import { buildAdminHead, getBookOgImagePath } from "@/lib/seo-meta";
 
 export const Route = createFileRoute("/admin")({
-  head: () => ({
-    meta: [
-      { title: "Admin & Publishing Management — Al Furqaan Publishers" },
-      { name: "description", content: "Management portal for Al Furqaan Publishers Ltd." },
-    ],
-  }),
+  loader: () => ({ origin: getRequestOrigin() }),
+  head: ({ loaderData }) => buildAdminHead(loaderData?.origin),
   component: AdminPage,
 });
 
 export function AdminPage() {
   const [activeTab, setActiveTab] = useState<"catalog" | "orders" | "marketing">("catalog");
-  const [selectedBookForPromo, setSelectedBookForPromo] = useState<Book>(BOOKS[0]);
+  const [selectedBookForPromo, setSelectedBookForPromo] = useState<Book>(BOOKS[0] as Book);
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
 
   // Direct Orders Ledger (hydrated from localStorage or sample activity)
@@ -204,41 +202,41 @@ export function AdminPage() {
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex items-center gap-2 border-b border-[#0c2b22]/15 mb-6">
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 border-b border-[#0c2b22]/15 mb-6">
           <button
             type="button"
             onClick={() => setActiveTab("catalog")}
-            className={`min-h-[44px] px-5 text-xs font-sans uppercase tracking-wider font-semibold border-b-2 transition-all flex items-center gap-2 ${
+            className={`min-h-[44px] px-3 sm:px-5 text-xs font-sans uppercase tracking-wider font-semibold border-b-2 transition-all flex items-center gap-2 ${
               activeTab === "catalog"
                 ? "border-[#0c2b22] text-[#0c2b22]"
                 : "border-transparent text-[#5a6b58] hover:text-[#0c2b22]"
             }`}
           >
-            <BookOpen className="w-4 h-4" /> Book Channels &amp; Pricing ({BOOKS.length})
+            <BookOpen className="w-4 h-4 shrink-0" /> Book Channels &amp; Pricing ({BOOKS.length})
           </button>
 
           <button
             type="button"
             onClick={() => setActiveTab("orders")}
-            className={`min-h-[44px] px-5 text-xs font-sans uppercase tracking-wider font-semibold border-b-2 transition-all flex items-center gap-2 ${
+            className={`min-h-[44px] px-3 sm:px-5 text-xs font-sans uppercase tracking-wider font-semibold border-b-2 transition-all flex items-center gap-2 ${
               activeTab === "orders"
                 ? "border-[#0c2b22] text-[#0c2b22]"
                 : "border-transparent text-[#5a6b58] hover:text-[#0c2b22]"
             }`}
           >
-            <Truck className="w-4 h-4" /> Direct Orders Ledger ({orders.length})
+            <Truck className="w-4 h-4 shrink-0" /> Direct Orders Ledger ({orders.length})
           </button>
 
           <button
             type="button"
             onClick={() => setActiveTab("marketing")}
-            className={`min-h-[44px] px-5 text-xs font-sans uppercase tracking-wider font-semibold border-b-2 transition-all flex items-center gap-2 ${
+            className={`min-h-[44px] px-3 sm:px-5 text-xs font-sans uppercase tracking-wider font-semibold border-b-2 transition-all flex items-center gap-2 ${
               activeTab === "marketing"
                 ? "border-[#0c2b22] text-[#0c2b22]"
                 : "border-transparent text-[#5a6b58] hover:text-[#0c2b22]"
             }`}
           >
-            <Share2 className="w-4 h-4" /> Promotional Broadcast Generator
+            <Share2 className="w-4 h-4 shrink-0" /> Promotional Broadcast Generator
           </button>
         </div>
 
@@ -429,9 +427,61 @@ export function AdminPage() {
 
             {/* Generated Marketing Copy */}
             <div className="lg:col-span-8 space-y-6">
+              {/* Open Graph / Social Link Card Preview */}
+              <div className="bg-white border border-[#0c2b22]/15 p-4 sm:p-5 shadow-sm">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-3 pb-2 border-b border-[#0c2b22]/10">
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-[#c9a35c]" />
+                    <h4 className="font-serif text-base font-semibold text-[#0c2b22]">
+                      Social Link &amp; Open Graph Card Preview (1200×630 PNG)
+                    </h4>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <a
+                      href={getBookOgImagePath(selectedBookForPromo.id)}
+                      download={`${selectedBookForPromo.slug}-alfurqaan-card.png`}
+                      className="min-h-[44px] px-3 py-1.5 bg-[#e2c380] text-[#07201a] hover:bg-[#c9a35c] text-xs font-sans uppercase tracking-wider font-semibold flex items-center gap-1.5 transition-colors"
+                    >
+                      <Download className="w-3.5 h-3.5" />
+                      <span>Download Card PNG</span>
+                    </a>
+                    <a
+                      href="/og-preview.png"
+                      download="alfurqaan-storefront-og.png"
+                      className="min-h-[44px] px-3 py-1.5 border border-[#0c2b22]/20 text-[#0c2b22] hover:bg-[#f4efe0] text-xs font-sans uppercase tracking-wider font-semibold flex items-center gap-1.5 transition-colors"
+                    >
+                      <Download className="w-3.5 h-3.5 text-[#7d5e1a]" />
+                      <span>Storefront Banner</span>
+                    </a>
+                  </div>
+                </div>
+                <div className="border border-[#0c2b22]/15 overflow-hidden bg-[#faf7ed]">
+                  <div className="aspect-[1200/630] bg-[#07201a] overflow-hidden">
+                    <img
+                      src={getBookOgImagePath(selectedBookForPromo.id)}
+                      alt={`${selectedBookForPromo.title} social preview banner`}
+                      width={1200}
+                      height={630}
+                      className="w-full h-full object-cover block"
+                    />
+                  </div>
+                  <div className="p-3.5 border-t border-[#0c2b22]/10 space-y-1">
+                    <span className="text-[10px] font-sans uppercase tracking-wider text-[#546553] block">
+                      /books/{selectedBookForPromo.slug}
+                    </span>
+                    <p className="font-serif text-base font-semibold text-[#0c2b22]">
+                      {selectedBookForPromo.title} — Al-Furqaan Publishers
+                    </p>
+                    <p className="font-serif text-xs text-[#4f6857] line-clamp-2">
+                      {selectedBookForPromo.tagline}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               {/* WhatsApp Broadcast Template */}
-              <div className="bg-white border border-[#0c2b22]/15 p-5 shadow-sm">
-                <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#0c2b22]/10">
+              <div className="bg-white border border-[#0c2b22]/15 p-4 sm:p-5 shadow-sm">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-3 pb-2 border-b border-[#0c2b22]/10">
                   <div className="flex items-center gap-2">
                     <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
                     <h4 className="font-serif text-base font-semibold text-[#0c2b22]">
@@ -441,7 +491,7 @@ export function AdminPage() {
                   <button
                     type="button"
                     onClick={() => copyToClipboard(promoCopyWhatsApp, "wa")}
-                    className="min-h-[36px] px-3 py-1 bg-[#0c2b22] text-[#f4efe0] hover:bg-[#c9a35c] hover:text-[#07201a] text-xs font-sans uppercase tracking-wider font-semibold flex items-center gap-1.5 transition-colors"
+                    className="min-h-[44px] px-3 py-1 bg-[#0c2b22] text-[#f4efe0] hover:bg-[#c9a35c] hover:text-[#07201a] text-xs font-sans uppercase tracking-wider font-semibold flex items-center gap-1.5 transition-colors"
                   >
                     {copiedKey === "wa" ? (
                       <Check className="w-3.5 h-3.5" />
@@ -457,8 +507,8 @@ export function AdminPage() {
               </div>
 
               {/* Twitter / Social Media Copy */}
-              <div className="bg-white border border-[#0c2b22]/15 p-5 shadow-sm">
-                <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#0c2b22]/10">
+              <div className="bg-white border border-[#0c2b22]/15 p-4 sm:p-5 shadow-sm">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-3 pb-2 border-b border-[#0c2b22]/10">
                   <div className="flex items-center gap-2">
                     <Share2 className="w-4 h-4 text-[#c9a35c]" />
                     <h4 className="font-serif text-base font-semibold text-[#0c2b22]">
@@ -468,7 +518,7 @@ export function AdminPage() {
                   <button
                     type="button"
                     onClick={() => copyToClipboard(promoCopyTwitter, "tw")}
-                    className="min-h-[36px] px-3 py-1 bg-[#0c2b22] text-[#f4efe0] hover:bg-[#c9a35c] hover:text-[#07201a] text-xs font-sans uppercase tracking-wider font-semibold flex items-center gap-1.5 transition-colors"
+                    className="min-h-[44px] px-3 py-1 bg-[#0c2b22] text-[#f4efe0] hover:bg-[#c9a35c] hover:text-[#07201a] text-xs font-sans uppercase tracking-wider font-semibold flex items-center gap-1.5 transition-colors"
                   >
                     {copiedKey === "tw" ? (
                       <Check className="w-3.5 h-3.5" />

@@ -15,6 +15,8 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { CartProvider } from "../lib/cart-context";
 import { Toaster } from "@/components/ui/sonner";
+import { getRequestOrigin } from "@/lib/seo";
+import { buildRootHead, buildRootIconLinks } from "@/lib/seo-meta";
 
 function NotFoundComponent() {
   return (
@@ -78,19 +80,9 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Al Furqaan Publishers — Islamic Books & Ebooks by Dr. A. A. Shittu" },
-      {
-        name: "description",
-        content:
-          "Al Furqaan Publishers — authentic Islamic books & ebooks by Barrister (Dr.) Abdur-Raheem Adebayo Shittu. Logical insights on Faith, Shariah & the Afterlife for the modern believer.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
+  loader: () => ({ origin: getRequestOrigin() }),
+  head: ({ loaderData }) => ({
+    ...buildRootHead(loaderData?.origin),
     links: [
       {
         rel: "stylesheet",
@@ -106,7 +98,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      ...buildRootIconLinks(),
     ],
   }),
   shellComponent: RootShell,

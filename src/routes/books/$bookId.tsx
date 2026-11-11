@@ -6,7 +6,10 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { QuickViewModal } from "@/components/book/QuickViewModal";
 import { ExcerptReaderModal } from "@/components/book/ExcerptReaderModal";
+import { SharePreviewModal } from "@/components/book/SharePreviewModal";
 import { CartDrawer } from "@/components/cart/CartDrawer";
+import { getRequestOrigin } from "@/lib/seo";
+import { buildBookHead } from "@/lib/seo-meta";
 import { CheckoutModal } from "@/components/cart/CheckoutModal";
 import { OrderSuccessModal } from "@/components/cart/OrderSuccessModal";
 import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
@@ -29,7 +32,6 @@ import {
   CheckCircle2,
   Share2,
 } from "lucide-react";
-import { toast } from "sonner";
 
 export const Route = createFileRoute("/books/$bookId")({
   loader: ({ params }) => {
@@ -37,28 +39,9 @@ export const Route = createFileRoute("/books/$bookId")({
     if (!book) {
       throw notFound();
     }
-    return { book };
+    return { book, origin: getRequestOrigin() };
   },
-  head: ({ loaderData }) => {
-    const book = loaderData?.book;
-    if (!book) {
-      return { meta: [{ title: "Book Not Found — Al Furqaan Publishers" }] };
-    }
-    return {
-      meta: [
-        { title: `${book.title} by Dr. Adebayo Shittu — Al Furqaan Publishers` },
-        { name: "description", content: book.desc },
-        { property: "og:title", content: `${book.title} — Al Furqaan Publishers` },
-        { property: "og:description", content: book.desc },
-        { property: "og:image", content: book.cover },
-        { property: "og:type", content: "book" },
-        { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:title", content: book.title },
-        { name: "twitter:description", content: book.desc },
-        { name: "twitter:image", content: book.cover },
-      ],
-    };
-  },
+  head: ({ loaderData }) => buildBookHead(loaderData?.book, loaderData?.origin),
   component: BookDetailPage,
 });
 
@@ -67,6 +50,7 @@ function BookDetailPage() {
   const { addItem, setIsCartOpen, openExcerptReader, formatPrice } = useCart();
   const [selectedFormat, setSelectedFormat] = useState<"print" | "ebook">("print");
   const [headerSearch, setHeaderSearch] = useState("");
+  const [isShareOpen, setIsShareOpen] = useState(false);
 
   const relatedBooks = getRelatedBooks(book.id, 3);
   const currentPrice = selectedFormat === "print" ? book.pricePrint : book.priceEbook;
@@ -75,21 +59,8 @@ function BookDetailPage() {
     addItem(book.id, selectedFormat, 1);
   };
 
-  const handleShare = async () => {
-    if (typeof navigator !== "undefined" && navigator.share) {
-      try {
-        await navigator.share({
-          title: book.title,
-          text: book.desc,
-          url: window.location.href,
-        });
-      } catch {
-        // Ignored if cancelled
-      }
-    } else if (typeof navigator !== "undefined" && navigator.clipboard) {
-      await navigator.clipboard.writeText(window.location.href);
-      toast.success("Link copied to clipboard!");
-    }
+  const handleShare = () => {
+    setIsShareOpen(true);
   };
 
   return (
@@ -129,9 +100,9 @@ function BookDetailPage() {
             <button
               type="button"
               onClick={handleShare}
-              className="mt-4 inline-flex items-center gap-1.5 text-xs font-sans uppercase tracking-wider text-[#546553] hover:text-[#0c2b22] transition-colors py-2"
+              className="mt-4 min-h-[44px] px-4 py-2 inline-flex items-center gap-2 text-xs font-sans uppercase tracking-wider text-[#0c2b22] border border-[#0c2b22]/15 bg-white/70 hover:bg-[#e2c380] transition-colors"
             >
-              <Share2 className="w-3.5 h-3.5 text-[#c9a35c]" /> Share this Book
+              <Share2 className="w-4 h-4 text-[#7d5e1a]" /> Share &amp; Preview Social Card
             </button>
           </div>
 
@@ -353,6 +324,7 @@ function BookDetailPage() {
       {/* Global Interactive Modals */}
       <QuickViewModal />
       <ExcerptReaderModal />
+      <SharePreviewModal book={book} isOpen={isShareOpen} onClose={() => setIsShareOpen(false)} />
       <CartDrawer />
       <CheckoutModal />
       <OrderSuccessModal />

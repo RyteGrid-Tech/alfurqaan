@@ -15,29 +15,12 @@ import { OrderSuccessModal } from "@/components/cart/OrderSuccessModal";
 import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { SearchCommandModal } from "@/components/search/SearchCommandModal";
 import { WhatsAppConcierge } from "@/components/layout/WhatsAppConcierge";
+import { getRequestOrigin } from "@/lib/seo";
+import { buildHomeHead } from "@/lib/seo-meta";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Al Furqaan Publishers — Islamic Books & Ebooks by Dr. A. A. Shittu" },
-      {
-        name: "description",
-        content:
-          "Al Furqaan Publishers Ltd — authentic Islamic books & ebooks by Barrister (Dr.) Abdur-Raheem Adebayo Shittu. Rigorous legal and theological insights on Faith, Shari'ah, Du'a, and the Afterlife for the modern believer.",
-      },
-      {
-        property: "og:title",
-        content: "Al Furqaan Publishers — Islamic Books & Ebooks by Dr. A. A. Shittu",
-      },
-      {
-        property: "og:description",
-        content:
-          "Official bookstore for Barrister (Dr.) Abdur-Raheem Adebayo Shittu. Buy fine print editions, instant digital ebooks via Selar, and Amazon editions.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  loader: () => ({ origin: getRequestOrigin() }),
+  head: ({ loaderData }) => buildHomeHead(loaderData?.origin),
   component: IndexPage,
 });
 
