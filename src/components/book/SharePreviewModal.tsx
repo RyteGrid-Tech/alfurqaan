@@ -152,11 +152,11 @@ export function SharePreviewModal({ book, isOpen, onClose }: SharePreviewModalPr
 
             <a
               href={ogImagePath}
-              download={`${book.slug}-alfurqaan-card.png`}
+              download={`${book.slug}-alfurqaan-card.jpg`}
               className="min-h-[44px] px-4 py-2.5 bg-[#e2c380] text-[#07201a] hover:bg-[#c9a35c] text-xs font-sans uppercase tracking-wider font-bold flex items-center justify-center gap-2 transition-colors"
             >
               <Download className="w-4 h-4" />
-              <span>Save 1200×630 Card PNG</span>
+              <span>Save 1200×630 Card</span>
             </a>
 
             {supportsNativeShare ? (
@@ -185,7 +185,7 @@ export function SharePreviewModal({ book, isOpen, onClose }: SharePreviewModalPr
         {/* Safe-area Footer Note */}
         <div className="px-4 sm:px-6 pt-2.5 pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-[#ebe3cc] border-t border-[#0c2b22]/10 text-[11px] font-sans text-[#546553] flex items-center justify-between gap-2 shrink-0">
           <span>Rich link preview ready for WhatsApp, X &amp; LinkedIn</span>
-          <span className="font-mono text-[#7d5e1a] whitespace-nowrap shrink-0">1200×630 PNG</span>
+          <span className="font-mono text-[#7d5e1a] whitespace-nowrap shrink-0">1200×630 JPG</span>
         </div>
       </div>
     </div>

@@ -433,21 +433,21 @@ export function AdminPage() {
                   <div className="flex items-center gap-2">
                     <Sparkles className="w-4 h-4 text-[#c9a35c]" />
                     <h4 className="font-serif text-base font-semibold text-[#0c2b22]">
-                      Social Link &amp; Open Graph Card Preview (1200×630 PNG)
+                      Social Link &amp; Open Graph Card Preview (1200×630 JPG)
                     </h4>
                   </div>
                   <div className="flex flex-wrap items-center gap-2">
                     <a
                       href={getBookOgImagePath(selectedBookForPromo.id)}
-                      download={`${selectedBookForPromo.slug}-alfurqaan-card.png`}
+                      download={`${selectedBookForPromo.slug}-alfurqaan-card.jpg`}
                       className="min-h-[44px] px-3 py-1.5 bg-[#e2c380] text-[#07201a] hover:bg-[#c9a35c] text-xs font-sans uppercase tracking-wider font-semibold flex items-center gap-1.5 transition-colors"
                     >
                       <Download className="w-3.5 h-3.5" />
-                      <span>Download Card PNG</span>
+                      <span>Download Card</span>
                     </a>
                     <a
-                      href="/og-preview.png"
-                      download="alfurqaan-storefront-og.png"
+                      href="/og-preview.jpg"
+                      download="alfurqaan-storefront-og.jpg"
                       className="min-h-[44px] px-3 py-1.5 border border-[#0c2b22]/20 text-[#0c2b22] hover:bg-[#f4efe0] text-xs font-sans uppercase tracking-wider font-semibold flex items-center gap-1.5 transition-colors"
                     >
                       <Download className="w-3.5 h-3.5 text-[#7d5e1a]" />

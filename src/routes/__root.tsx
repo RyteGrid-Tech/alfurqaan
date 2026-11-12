@@ -109,7 +109,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="overflow-x-clip max-w-full w-full">
+    <html lang="en" prefix="og: https://ogp.me/ns#" className="overflow-x-clip max-w-full w-full">
       <head>
         <HeadContent />
       </head>

@@ -19,6 +19,7 @@ import {
 
 const TEST_DIR = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC_DIR = path.resolve(TEST_DIR, "../../public");
+const WHATSAPP_OG_MAX_BYTES = 300 * 1024;
 
 function readPngDimensions(filePath: string): { width: number; height: number } {
   const buf = fs.readFileSync(filePath);
@@ -32,6 +33,42 @@ function readPngDimensions(filePath: string): { width: number; height: number } 
   };
 }
 
+function readJpegDimensions(filePath: string): { width: number; height: number; bytes: number } {
+  const buf = fs.readFileSync(filePath);
+  expect(buf[0]).toBe(0xff);
+  expect(buf[1]).toBe(0xd8);
+
+  let offset = 2;
+  while (offset + 4 < buf.length) {
+    if (buf[offset] !== 0xff) {
+      offset++;
+      continue;
+    }
+    const marker = buf[offset + 1] ?? 0;
+    if (marker === 0xc0 || marker === 0xc1 || marker === 0xc2) {
+      return {
+        height: buf.readUInt16BE(offset + 5),
+        width: buf.readUInt16BE(offset + 7),
+        bytes: buf.length,
+      };
+    }
+    if (
+      marker === 0xd8 ||
+      marker === 0xd9 ||
+      marker === 0x01 ||
+      (marker >= 0xd0 && marker <= 0xd7)
+    ) {
+      offset += 2;
+      continue;
+    }
+    const segLen = buf.readUInt16BE(offset + 2);
+    if (segLen < 2) break;
+    offset += 2 + segLen;
+  }
+
+  throw new Error(`No SOF frame found in JPEG ${filePath}`);
+}
+
 describe("SEO & Brand Metadata Builders", () => {
   it("normalizes origins and resolves absolute URLs safely", () => {
     expect(normalizeOrigin(undefined)).toBe(DEFAULT_SITE_ORIGIN);
@@ -40,8 +77,8 @@ describe("SEO & Brand Metadata Builders", () => {
     expect(normalizeOrigin("https://alfurqaan.pages.dev///")).toBe("https://alfurqaan.pages.dev");
     expect(normalizeOrigin("http://localhost:4176/")).toBe("http://localhost:4176");
 
-    expect(toAbsoluteUrl("https://alfurqaan.ng/", "/og-preview.png")).toBe(
-      "https://alfurqaan.ng/og-preview.png",
+    expect(toAbsoluteUrl("https://alfurqaan.ng/", "/og-preview.jpg")).toBe(
+      "https://alfurqaan.ng/og-preview.jpg",
     );
     expect(toAbsoluteUrl("https://alfurqaan.ng", "favicon.svg")).toBe(
       "https://alfurqaan.ng/favicon.svg",
@@ -49,7 +86,7 @@ describe("SEO & Brand Metadata Builders", () => {
     expect(toAbsoluteUrl("https://alfurqaan.ng", "https://selar.com/m/Barr-Adebayo-Shittu")).toBe(
       "https://selar.com/m/Barr-Adebayo-Shittu",
     );
-    expect(getBookOgImagePath("path-to-paradise")).toBe("/og/books/path-to-paradise.png");
+    expect(getBookOgImagePath("path-to-paradise")).toBe("/og/books/path-to-paradise.jpg");
   });
 
   it("escapes < characters in JSON-LD so closing script tags cannot break HTML", () => {
@@ -72,8 +109,10 @@ describe("SEO & Brand Metadata Builders", () => {
 
     const rootHead = buildRootHead();
     const ogImage = rootHead.meta.find((m) => "property" in m && m.property === "og:image");
+    const ogType = rootHead.meta.find((m) => "property" in m && m.property === "og:image:type");
     const theme = rootHead.meta.find((m) => "name" in m && m.name === "theme-color");
-    expect(ogImage?.content).toBe(`${DEFAULT_SITE_ORIGIN}/og-preview.png`);
+    expect(ogImage?.content).toBe(`${DEFAULT_SITE_ORIGIN}/og-preview.jpg`);
+    expect(ogType?.content).toBe("image/jpeg");
     expect(theme?.content).toBe(SITE_SEO.themeColor);
   });
 
@@ -81,8 +120,10 @@ describe("SEO & Brand Metadata Builders", () => {
     const head = buildHomeHead("https://store.alfurqaan.com/");
     const ogImage = head.meta.find((m) => "property" in m && m.property === "og:image");
     const ogSecure = head.meta.find((m) => "property" in m && m.property === "og:image:secure_url");
-    expect(ogImage?.content).toBe("https://store.alfurqaan.com/og-preview.png");
-    expect(ogSecure?.content).toBe("https://store.alfurqaan.com/og-preview.png");
+    const ogType = head.meta.find((m) => "property" in m && m.property === "og:image:type");
+    expect(ogImage?.content).toBe("https://store.alfurqaan.com/og-preview.jpg");
+    expect(ogSecure?.content).toBe("https://store.alfurqaan.com/og-preview.jpg");
+    expect(ogType?.content).toBe("image/jpeg");
     expect(head.links).toEqual([{ rel: "canonical", href: "https://store.alfurqaan.com/" }]);
 
     expect(head.scripts).toHaveLength(1);
@@ -99,7 +140,7 @@ describe("SEO & Brand Metadata Builders", () => {
     for (const book of BOOKS) {
       const head = buildBookHead(book, DEFAULT_SITE_ORIGIN);
       const ogImage = head.meta.find((m) => "property" in m && m.property === "og:image");
-      expect(ogImage?.content).toBe(`${DEFAULT_SITE_ORIGIN}/og/books/${book.id}.png`);
+      expect(ogImage?.content).toBe(`${DEFAULT_SITE_ORIGIN}/og/books/${book.id}.jpg`);
       expect(head.links).toEqual([
         { rel: "canonical", href: `${DEFAULT_SITE_ORIGIN}/books/${book.slug}` },
       ]);
@@ -126,7 +167,7 @@ describe("SEO & Brand Metadata Builders", () => {
       "noindex, nofollow",
     );
     expect(admin.meta.find((m) => "property" in m && m.property === "og:image")?.content).toBe(
-      "https://alfurqaan.lovable.app/og-preview.png",
+      "https://alfurqaan.lovable.app/og-preview.jpg",
     );
   });
 });
@@ -155,7 +196,7 @@ describe("Generated Favicon, PWA Manifest & 1200x630 Open Graph Assets", () => {
     expect(widths).toEqual([16, 32, 48]);
   });
 
-  it("provides exact PNG dimensions for favicon, Apple Touch Icon, PWA icons, and storefront OG banner", () => {
+  it("provides exact PNG dimensions for icons and WhatsApp-compliant (<300KB) 1200x630 JPEG storefront OG banner", () => {
     expect(readPngDimensions(path.join(PUBLIC_DIR, "favicon-16x16.png"))).toEqual({
       width: 16,
       height: 16,
@@ -176,17 +217,21 @@ describe("Generated Favicon, PWA Manifest & 1200x630 Open Graph Assets", () => {
       width: 512,
       height: 512,
     });
-    expect(readPngDimensions(path.join(PUBLIC_DIR, "og-preview.png"))).toEqual({
+    const storefrontOg = readJpegDimensions(path.join(PUBLIC_DIR, "og-preview.jpg"));
+    expect({ width: storefrontOg.width, height: storefrontOg.height }).toEqual({
       width: 1200,
       height: 630,
     });
+    expect(storefrontOg.bytes).toBeLessThan(WHATSAPP_OG_MAX_BYTES);
   });
 
-  it("provides dedicated 1200x630 Open Graph PNG cards for all 8 books", () => {
+  it("provides dedicated WhatsApp-compliant (<300KB) 1200x630 Open Graph JPEG cards for all 8 books", () => {
     for (const book of BOOKS) {
-      const ogFile = path.join(PUBLIC_DIR, "og/books", `${book.id}.png`);
+      const ogFile = path.join(PUBLIC_DIR, "og/books", `${book.id}.jpg`);
       expect(fs.existsSync(ogFile)).toBe(true);
-      expect(readPngDimensions(ogFile)).toEqual({ width: 1200, height: 630 });
+      const dims = readJpegDimensions(ogFile);
+      expect({ width: dims.width, height: dims.height }).toEqual({ width: 1200, height: 630 });
+      expect(dims.bytes).toBeLessThan(WHATSAPP_OG_MAX_BYTES);
     }
   });
 

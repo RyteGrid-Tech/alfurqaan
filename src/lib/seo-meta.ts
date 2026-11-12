@@ -21,7 +21,7 @@ export const SITE_SEO = {
   ogTitle: "Al-Furqaan Publishers Ltd. — True Knowledge, Beautifully Bound",
   ogDescription:
     "Official library of Barrister (Dr.) Abdur-Raheem Adebayo Shittu. Browse all 8 scholarly titles in fine print, instant Selar digital ebooks, and Amazon editions since 1987.",
-  imagePath: "/og-preview.png",
+  imagePath: "/og-preview.jpg",
   imageAlt:
     "Al-Furqaan Publishers Ltd. — Official Bookstore & 8 Islamic Titles by Barrister (Dr.) Abdur-Raheem Adebayo Shittu",
   keywords: [
@@ -61,7 +61,7 @@ export function toAbsoluteUrl(origin: string | undefined | null, pathnameOrUrl: 
 }
 
 export function getBookOgImagePath(bookId: string): string {
-  return `/og/books/${bookId}.png`;
+  return `/og/books/${bookId}.jpg`;
 }
 
 export function serializeJsonLd(payload: unknown): string {
@@ -71,7 +71,7 @@ export function serializeJsonLd(payload: unknown): string {
 function buildOpenGraphImageTags(imageUrl: string, alt: string) {
   const tags: Array<{ property: string; content: string }> = [
     { property: "og:image", content: imageUrl },
-    { property: "og:image:type", content: "image/png" },
+    { property: "og:image:type", content: "image/jpeg" },
     { property: "og:image:width", content: "1200" },
     { property: "og:image:height", content: "630" },
     { property: "og:image:alt", content: alt },
