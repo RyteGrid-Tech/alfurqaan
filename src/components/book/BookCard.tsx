@@ -7,9 +7,10 @@ import { Link } from "@tanstack/react-router";
 
 interface BookCardProps {
   book: Book;
+  priority?: boolean;
 }
 
-export function BookCard({ book }: BookCardProps) {
+export function BookCard({ book, priority = false }: BookCardProps) {
   const { addItem, openQuickView, openExcerptReader, formatPrice } = useCart();
   const [selectedFormat, setSelectedFormat] = useState<"print" | "ebook">("print");
 
@@ -43,7 +44,11 @@ export function BookCard({ book }: BookCardProps) {
           <img
             src={book.cover}
             alt={`${book.title} cover`}
-            loading="lazy"
+            width={450}
+            height={600}
+            loading={priority ? "eager" : "lazy"}
+            fetchPriority={priority ? "high" : "auto"}
+            decoding="async"
             className="w-full h-full object-cover transition-transform duration-500 group-hover/cover:scale-105"
           />
         </button>

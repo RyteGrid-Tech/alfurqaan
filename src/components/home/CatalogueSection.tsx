@@ -162,8 +162,8 @@ export function CatalogueSection({ searchQuery, setSearchQuery }: CatalogueSecti
       {/* Catalogue Book Grid */}
       {filteredBooks.length > 0 ? (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
-          {filteredBooks.map((book) => (
-            <BookCard key={book.id} book={book} />
+          {filteredBooks.map((book, index) => (
+            <BookCard key={book.id} book={book} priority={index < 4} />
           ))}
         </div>
       ) : (

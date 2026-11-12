@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { BOOKS } from "@/data/books";
-import { ArrowDown, BookOpen } from "lucide-react";
+import { ArrowDown, BookOpen, Pause, Play } from "lucide-react";
 
 export function HeroSection() {
+  const [isMarqueePaused, setIsMarqueePaused] = useState(false);
+
   return (
     <section className="relative lg:min-h-[76dvh] flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 pt-6 sm:pt-10 lg:pt-12 pb-8 sm:pb-12 overflow-x-clip max-w-full w-full bg-[#f4efe0]">
       {/* Classical Geometric Watermark Background */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20 overflow-hidden max-w-full">
         <svg
-          className="w-[min(65vw,450px)] h-[min(65vw,450px)] max-w-full max-h-full animate-[spin_60s_linear_infinite]"
+          className="w-[min(65vw,450px)] h-[min(65vw,450px)] max-w-full max-h-full motion-safe:animate-[spin_60s_linear_infinite]"
           viewBox="0 0 200 200"
           fill="none"
           stroke="#c9a35c"
@@ -77,22 +79,40 @@ export function HeroSection() {
       </div>
 
       {/* Marquee Ticker Track */}
-      <div
-        className="w-full min-w-0 max-w-full mt-8 sm:mt-14 bg-[#07201a] py-3 overflow-x-clip overflow-y-hidden select-none"
-        aria-hidden="true"
-      >
-        <div className="flex whitespace-nowrap animate-[marquee_35s_linear_infinite]">
-          {[...BOOKS, ...BOOKS].map((b, idx) => (
-            <span
-              key={`${b.id}-${idx}`}
-              className="inline-flex items-center font-serif text-sm italic text-[#c9a35c] mx-4"
-            >
-              <span className="text-xs not-italic mr-3 text-[#e2c380]">﷽</span>
-              {b.title}
-              <span className="mx-3 text-[#8fa893]">❖</span>
-            </span>
-          ))}
+      <div className="w-full min-w-0 max-w-full mt-8 sm:mt-14 bg-[#07201a] flex items-center select-none group/ticker">
+        <div
+          className="flex-1 min-w-0 py-2.5 overflow-x-clip overflow-y-hidden [mask-image:linear-gradient(to_right,transparent,black_3%,black_96%,transparent)]"
+          aria-hidden="true"
+        >
+          <div
+            className="flex w-max whitespace-nowrap motion-safe:animate-[marquee_26s_linear_infinite] group-hover/ticker:[animation-play-state:paused]"
+            style={isMarqueePaused ? { animationPlayState: "paused" } : undefined}
+          >
+            {[...BOOKS, ...BOOKS].map((b, idx) => (
+              <span
+                key={`${b.id}-${idx}`}
+                className="inline-flex items-center font-serif text-sm italic text-[#c9a35c] mx-4"
+              >
+                <span className="text-xs not-italic mr-3 text-[#e2c380]">﷽</span>
+                {b.title}
+                <span className="mx-3 text-[#8fa893]">❖</span>
+              </span>
+            ))}
+          </div>
         </div>
+        <button
+          type="button"
+          onClick={() => setIsMarqueePaused((prev) => !prev)}
+          aria-label={isMarqueePaused ? "Play scrolling titles" : "Pause scrolling titles"}
+          title={isMarqueePaused ? "Play scrolling titles" : "Pause scrolling titles"}
+          className="shrink-0 min-w-[44px] min-h-[44px] inline-flex items-center justify-center bg-[#07201a] text-[#c9a35c] hover:text-[#e2c380] hover:bg-[#0c2b22] border-l border-[#c9a35c]/20 transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#c9a35c]"
+        >
+          {isMarqueePaused ? (
+            <Play className="w-3.5 h-3.5" aria-hidden="true" />
+          ) : (
+            <Pause className="w-3.5 h-3.5" aria-hidden="true" />
+          )}
+        </button>
       </div>
     </section>
   );

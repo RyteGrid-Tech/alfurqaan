@@ -334,7 +334,7 @@ function BookDetailPage() {
       <WhatsAppConcierge />
 
       {/* Sticky Mobile Bottom Buy Bar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#f4efe0] border-t border-[#0c2b22]/15 p-3 flex items-center justify-between gap-3 shadow-xl">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#f4efe0] border-t border-[#0c2b22]/15 px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] flex items-center justify-between gap-3 shadow-xl">
         <div className="flex flex-col">
           <span className="text-[10px] uppercase font-sans text-[#7d5e1a] font-semibold">
             {selectedFormat === "print" ? "Print" : "Ebook"}

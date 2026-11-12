@@ -148,4 +148,42 @@ describe("Mobile Viewport Overflow & Responsive Modal Guardrails", () => {
     expect(checkoutContent).toContain('data-suppress-toast="true"');
     expect(cssContent).toContain('body:has([data-suppress-toast="true"])');
   });
+
+  it("ensures hero marquee sizes to full track width, exposes Pause/Play without aria-pressed, and respects reduced motion", () => {
+    const heroContent = fs.readFileSync(
+      path.resolve(import.meta.dir, "../components/home/HeroSection.tsx"),
+      "utf-8",
+    );
+    expect(heroContent).toContain("w-max");
+    expect(heroContent).toContain("motion-safe:animate-[marquee_26s_linear_infinite]");
+    expect(heroContent).toContain("motion-safe:animate-[spin_60s_linear_infinite]");
+    expect(heroContent).toContain("Pause scrolling titles");
+    expect(heroContent).toContain("Play scrolling titles");
+    expect(heroContent).not.toContain("aria-pressed");
+
+    const cssContent = fs.readFileSync(path.resolve(import.meta.dir, "../styles.css"), "utf-8");
+    expect(cssContent).toContain("@media (prefers-reduced-motion: no-preference)");
+  });
+
+  it("sets explicit aspect dimensions and eager top-row loading on BookCard covers and safe-area padding on book sticky buy bar", () => {
+    const cardContent = fs.readFileSync(
+      path.resolve(import.meta.dir, "../components/book/BookCard.tsx"),
+      "utf-8",
+    );
+    expect(cardContent).toContain("width={450}");
+    expect(cardContent).toContain("height={600}");
+    expect(cardContent).toContain('loading={priority ? "eager" : "lazy"}');
+
+    const catContent = fs.readFileSync(
+      path.resolve(import.meta.dir, "../components/home/CatalogueSection.tsx"),
+      "utf-8",
+    );
+    expect(catContent).toContain("priority={index < 4}");
+
+    const detailContent = fs.readFileSync(
+      path.resolve(import.meta.dir, "../routes/books/$bookId.tsx"),
+      "utf-8",
+    );
+    expect(detailContent).toContain("env(safe-area-inset-bottom)");
+  });
 });
