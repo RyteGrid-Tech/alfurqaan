@@ -6,7 +6,10 @@ export function HeroSection() {
   const [isMarqueePaused, setIsMarqueePaused] = useState(false);
 
   return (
-    <section className="relative lg:min-h-[76dvh] flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 pt-6 sm:pt-10 lg:pt-12 pb-8 sm:pb-12 overflow-x-clip max-w-full w-full bg-[#f4efe0]">
+    <section
+      id="hero"
+      className="relative lg:min-h-[76dvh] flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 pt-6 sm:pt-10 lg:pt-12 pb-8 sm:pb-12 overflow-x-clip max-w-full w-full bg-[#f4efe0]"
+    >
       {/* Classical Geometric Watermark Background */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20 overflow-hidden max-w-full">
         <svg

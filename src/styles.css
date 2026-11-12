@@ -190,7 +190,34 @@
   scrollbar-width: none;
 }
 
-/* Suppress storefront cart-added toasts while Bag or Checkout dialogs are open */
+/* Suppress storefront cart-added toasts and floating Back-to-Top while overlays are open */
 body:has([data-suppress-toast="true"]) [data-sonner-toaster] {
   display: none;
+}
+
+body:has([data-suppress-toast="true"]) .scroll-top-fab {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Progressive scroll-driven settle polish for editorial cards without hiding SSR content */
+@media (prefers-reduced-motion: no-preference) {
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    @keyframes scroll-settle {
+      from {
+        opacity: 0.86;
+        transform: translateY(18px) scale(0.985);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .scroll-reveal-card {
+      animation: scroll-settle auto linear both;
+      animation-timeline: view(block);
+      animation-range: entry 0% entry 35%;
+    }
+  }
 }

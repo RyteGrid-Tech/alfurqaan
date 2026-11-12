@@ -65,7 +65,7 @@ export function WhyAuthorSection() {
             return (
               <div
                 key={p.num}
-                className="p-6 bg-[#0c2b22]/40 border border-[#c9a35c]/20 hover:border-[#c9a35c]/50 transition-colors flex flex-col justify-between"
+                className="scroll-reveal-card p-6 bg-[#0c2b22]/40 border border-[#c9a35c]/20 hover:border-[#c9a35c]/50 transition-colors flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -83,7 +83,7 @@ export function WhyAuthorSection() {
         </div>
 
         {/* Closing Hadith Quote */}
-        <div className="text-center max-w-2xl mx-auto pt-8 border-t border-[#c9a35c]/20">
+        <div className="scroll-reveal-card text-center max-w-2xl mx-auto pt-8 border-t border-[#c9a35c]/20">
           <span className="font-serif text-3xl text-[#c9a35c] block mb-3">﷽</span>
           <blockquote className="font-serif italic text-xl sm:text-2xl text-[#ece5d2] leading-snug mb-3">
             &ldquo;The seeking of knowledge is an obligation upon every Muslim.&rdquo;

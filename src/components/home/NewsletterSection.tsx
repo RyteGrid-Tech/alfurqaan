@@ -22,7 +22,7 @@ export function NewsletterSection() {
 
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#f4efe0] scroll-mt-20">
-      <div className="max-w-4xl mx-auto p-8 sm:p-12 border border-[#0c2b22]/15 bg-white/60 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8">
+      <div className="scroll-reveal-card max-w-4xl mx-auto p-8 sm:p-12 border border-[#0c2b22]/15 bg-white/60 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8">
         {/* Pitch */}
         <div className="max-w-md">
           <p className="text-[11px] font-sans uppercase tracking-[0.34em] text-[#8f5a26] font-semibold mb-2">

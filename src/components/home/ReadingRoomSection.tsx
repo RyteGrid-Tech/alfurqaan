@@ -52,7 +52,7 @@ export function ReadingRoomSection() {
               return (
                 <div
                   key={j.slug}
-                  className="p-5 bg-white/70 border border-[#0c2b22]/10 hover:border-[#c9a35c]/50 transition-colors shadow-sm"
+                  className="scroll-reveal-card p-5 bg-white/70 border border-[#0c2b22]/10 hover:border-[#c9a35c]/50 transition-colors shadow-sm"
                 >
                   <div className="flex items-start gap-3.5">
                     <div className="w-9 h-9 rounded-none bg-[#0c2b22] text-[#c9a35c] grid place-items-center shrink-0 mt-0.5">
@@ -90,7 +90,7 @@ export function ReadingRoomSection() {
 
         {/* Right: 3D Visual Book Stack */}
         <div className="w-full lg:w-96 flex justify-center py-6 px-4 overflow-hidden max-w-full">
-          <div className="relative w-56 h-72 sm:w-64 sm:h-80 select-none">
+          <div className="scroll-reveal-card relative w-56 h-72 sm:w-64 sm:h-80 select-none">
             {/* Book 1 (Bottom) */}
             <div className="absolute inset-0 bg-[#1d4f3f] text-[#ece5d2] p-5 shadow-2xl border border-[#c9a35c]/30 transform rotate-6 translate-x-4 translate-y-4 transition-transform hover:rotate-3 flex flex-col justify-between">
               <span className="text-[10px] uppercase tracking-widest font-sans text-[#c9a35c]">

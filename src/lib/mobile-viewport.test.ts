@@ -186,4 +186,46 @@ describe("Mobile Viewport Overflow & Responsive Modal Guardrails", () => {
     );
     expect(detailContent).toContain("env(safe-area-inset-bottom)");
   });
+
+  it("mounts BackToTopButton on Home & Book Detail with IntersectionObserver sentinel, bottom-left placement, and progressive scroll-entry CSS", () => {
+    const backTopContent = fs.readFileSync(
+      path.resolve(import.meta.dir, "../components/layout/BackToTopButton.tsx"),
+      "utf-8",
+    );
+    expect(backTopContent).toContain("IntersectionObserver");
+    expect(backTopContent).toContain("prefers-reduced-motion: reduce");
+    expect(backTopContent).toContain("left-3 sm:left-6");
+    expect(backTopContent).toContain("bottom-20 md:bottom-6");
+    expect(backTopContent).toContain("min-w-[44px] min-h-[44px]");
+    expect(backTopContent).toContain("scroll-top-fab");
+
+    const homeContent = fs.readFileSync(
+      path.resolve(import.meta.dir, "../routes/index.tsx"),
+      "utf-8",
+    );
+    expect(homeContent).toContain("<BackToTopButton />");
+    expect(homeContent).toContain("relative min-h-screen");
+
+    const detailContent = fs.readFileSync(
+      path.resolve(import.meta.dir, "../routes/books/$bookId.tsx"),
+      "utf-8",
+    );
+    expect(detailContent).toContain("<BackToTopButton />");
+    expect(detailContent).toContain("relative min-h-screen");
+
+    const cssContent = fs.readFileSync(path.resolve(import.meta.dir, "../styles.css"), "utf-8");
+    expect(cssContent).toContain('body:has([data-suppress-toast="true"]) .scroll-top-fab');
+    expect(cssContent).toContain(
+      "@supports ((animation-timeline: view()) and (animation-range: entry))",
+    );
+    expect(cssContent).toContain("animation-timeline: view(block);");
+    expect(cssContent).toContain("animation-range: entry 0% entry 35%;");
+    expect(cssContent).not.toMatch(/@keyframes scroll-settle[\s\S]*opacity:\s*0[;\s]/);
+
+    const catContent = fs.readFileSync(
+      path.resolve(import.meta.dir, "../components/home/CatalogueSection.tsx"),
+      "utf-8",
+    );
+    expect(catContent).not.toContain("scroll-reveal-card");
+  });
 });

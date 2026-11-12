@@ -15,6 +15,7 @@ import { OrderSuccessModal } from "@/components/cart/OrderSuccessModal";
 import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { SearchCommandModal } from "@/components/search/SearchCommandModal";
 import { WhatsAppConcierge } from "@/components/layout/WhatsAppConcierge";
+import { BackToTopButton } from "@/components/layout/BackToTopButton";
 import { getRequestOrigin } from "@/lib/seo";
 import { buildHomeHead } from "@/lib/seo-meta";
 
@@ -35,7 +36,7 @@ function IndexPage() {
   };
 
   return (
-    <div className="min-h-screen w-full max-w-full overflow-x-clip bg-[#f4efe0] text-[#0c2b22] font-serif selection:bg-[#c9a35c] selection:text-[#07201a]">
+    <div className="relative min-h-screen w-full max-w-full overflow-x-clip bg-[#f4efe0] text-[#0c2b22] font-serif selection:bg-[#c9a35c] selection:text-[#07201a]">
       {/* Skip to Main Content Link for Screen Readers */}
       <a
         href="#catalogue"
@@ -79,7 +80,8 @@ function IndexPage() {
       <OrderSuccessModal />
       <SearchCommandModal />
 
-      {/* Floating Islamic WhatsApp Concierge */}
+      {/* Floating Islamic WhatsApp Concierge & Back-to-Top */}
+      <BackToTopButton />
       <WhatsAppConcierge />
 
       {/* Sticky Mobile Bottom Navigation (Visible on phones only) */}

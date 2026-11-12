@@ -13,6 +13,7 @@ import { buildBookHead } from "@/lib/seo-meta";
 import { CheckoutModal } from "@/components/cart/CheckoutModal";
 import { OrderSuccessModal } from "@/components/cart/OrderSuccessModal";
 import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
+import { BackToTopButton } from "@/components/layout/BackToTopButton";
 import { SearchCommandModal } from "@/components/search/SearchCommandModal";
 import { WhatsAppConcierge } from "@/components/layout/WhatsAppConcierge";
 import {
@@ -64,7 +65,7 @@ function BookDetailPage() {
   };
 
   return (
-    <div className="min-h-screen w-full max-w-full overflow-x-clip bg-[#f4efe0] text-[#0c2b22] font-serif selection:bg-[#c9a35c] selection:text-[#07201a]">
+    <div className="relative min-h-screen w-full max-w-full overflow-x-clip bg-[#f4efe0] text-[#0c2b22] font-serif selection:bg-[#c9a35c] selection:text-[#07201a]">
       <SiteHeader searchQuery={headerSearch} setSearchQuery={setHeaderSearch} />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
@@ -330,7 +331,8 @@ function BookDetailPage() {
       <OrderSuccessModal />
       <SearchCommandModal />
 
-      {/* Floating Islamic WhatsApp Concierge */}
+      {/* Floating Islamic WhatsApp Concierge & Back-to-Top */}
+      <BackToTopButton />
       <WhatsAppConcierge />
 
       {/* Sticky Mobile Bottom Buy Bar */}
